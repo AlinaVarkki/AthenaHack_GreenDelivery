@@ -1,1 +1,85 @@
-// kind of like listing?
+import React from 'react';
+import {Image, StyleSheet, Text, TouchableWithoutFeedback, View} from 'react-native';
+import Icon from 'react-native-vector-icons/EvilIcons';
+import ColourPalette from "../ColourPalette";
+
+function Restaurant({listing_id, title, category, image, timeSincePosting, priceCategory, distance, timeMeasurement}){
+
+    // const navigation = useNavigation();
+
+    // function seeListing(){
+    //     navigation.navigate('FullListing', {listID: listing_id, username: user, creator: creator})
+    // }
+
+    return (
+        <TouchableWithoutFeedback>
+            <View style = {styles.listing}>
+                <View style = {styles.upperSection}>
+                    <Image style = {styles.image} source={require('../Resources/food.jpg')} />
+                </View>
+                <View style = {styles.lowerSection}>
+                    <View style = {styles.lowerLeftSection}>
+                        <Text style = {styles.headerText}>{title}</Text>
+                        <View style = {styles.categoryAndPriceSection}>
+                            <Text style = {{color: ColourPalette.darkGreen}}>{category}</Text>
+                            <Text style = {{color: ColourPalette.darkGreen}}>{priceCategory}</Text>
+                        </View>
+                    </View>
+                    <View style = {styles.lowerRightSection}>
+                        <Text style = {{color: ColourPalette.darkGreen}}>{timeSincePosting} {timeMeasurement} ago</Text>
+                        <Text style = {{color: ColourPalette.darkGreen, opacity: .6}}><Icon name="location" size={19} color={ColourPalette.darkGreen} />{distance}km away</Text>
+                    </View>
+                </View>
+            </View>
+        </TouchableWithoutFeedback>
+    );
+}
+
+const styles = StyleSheet.create({
+    listing: {
+        flex:1,
+        borderRadius: 10,
+        backgroundColor: '#fff',
+        marginBottom: 20,
+        overflow: 'hidden',
+        width: '100%',
+        height: 230,
+        elevation: 0.5,
+    },
+    upperSection: {
+        flex: 7,
+    },
+    lowerSection: {
+        flex: 2,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingTop: 5,
+        paddingRight: 10,
+        paddingLeft: 10,
+        paddingBottom: 14,
+    },
+    image: {
+        width: '100%',
+        height: '100%',
+        position: 'absolute',
+    },
+    lowerLeftSection: {
+        flex: 8,
+        justifyContent: 'space-between',
+    },
+    lowerRightSection: {
+        flex: 7,
+        alignItems: 'flex-end',
+        justifyContent: 'space-between',
+    },
+    categoryAndPriceSection: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    headerText: {
+        fontSize: 17,
+        color: ColourPalette.darkGreen
+    },
+})
+
+export default Restaurant;
