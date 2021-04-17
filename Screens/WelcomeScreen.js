@@ -10,6 +10,7 @@ const WelcomeScreen = () => {
         <SafeAreaView style={styles.background}>
 
             <Image style={styles.image} source={require("../Images/logo.png")}/>
+
             <Text style={styles.smallerText}>Delicious Food{"\n"}Recyclable Packaging </Text>
 
             <Text style={styles.biggerText}>Your GREEN{"\n"}Delivery</Text>
@@ -19,7 +20,7 @@ const WelcomeScreen = () => {
 
 }
 
-const {height, width} = Dimensions.get("screen");
+const {height} = Dimensions.get("screen");
 const picHeight = height*0.2;
 
 
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
     image: {
         height: picHeight,
         position: 'absolute',
-        top: height*0.2,
+        top: height*0.21,
     },
     smallerText: {
         color: 'white',
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Ubuntu',
         letterSpacing: 1.5,
         position: 'absolute',
-        top: height*0.51,
+        top: height*0.52,
         left: 20,
     },
     biggerText:{
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
         letterSpacing: 3,
         paddingTop: 5,
         position: 'absolute',
-        top: height*0.6,
+        top: height*0.61,
         left: 20,
 
     },
