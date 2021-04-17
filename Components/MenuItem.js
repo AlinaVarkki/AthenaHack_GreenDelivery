@@ -7,20 +7,20 @@ import Button from "./Button";
 
 const MenuItem = ( {item, onPress}) => {
 
-    // const img = require(item.image);
+    const imgExists = !(item.image == null)
 
     return (
         <View style={styles.container}>
-            <View style={styles.leftSide}>
+            <View style={{width: (imgExists ? '65%' : '90%')}}>
                 <Text style={styles.title}>{item.title}</Text>
                 <Text style={styles.description}>{item.description}</Text>
                 <Text style={styles.price}>£{item.price}</Text>
             </View>
-            <View style={styles.imagePart}>
-                {/*<Image style={styles.image} source={item.image}/>*/}
-                <Image style = {styles.image} source= {require('../Resources/food.jpg')}/>
-
-            </View>
+            {imgExists ? (<View style={styles.imagePart}>
+                <Image style={styles.image} source={item.image}/>
+                {/*<Image style = {styles.image} source= {require('../Resources/food.jpg')}/>*/}
+                </View> )
+                : null }
             <View style={styles.rightSide}>
                 <Button name="+" onPress={onPress}/>
             </View>
@@ -33,14 +33,11 @@ const styles = StyleSheet.create({
     container: {
         paddingVertical: 5,
         flexDirection: 'row',
-        height: 100,
+        height: 110,
         borderColor: ColourPalette.grey,
         borderTopWidth: 0.5,
         borderBottomWidth: 0.5,
 
-    },
-    leftSide: {
-        width: '65%'
     },
     title: {
         fontWeight: 'bold',
@@ -48,6 +45,9 @@ const styles = StyleSheet.create({
     },
     description: {
         paddingVertical: 3,
+        height: 55,
+
+        overflow: 'hidden',
     },
     price: {
         color: ColourPalette.darkGreen,
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     image:{
-        width: '75%',
+        width: 70,
         height: 70,
     },
     rightSide: {
