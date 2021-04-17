@@ -10,7 +10,7 @@ import {
     TouchableHighlight,
     TouchableOpacity,
     TouchableWithoutFeedback,
-    SafeAreaView, Dimensions
+    SafeAreaView
 } from 'react-native';
 import ColourPalette from "../ColourPalette";
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -18,8 +18,7 @@ import Icon1 from "react-native-vector-icons/Ionicons";
 import MenuItem from "../Components/MenuItem";
 import RestaurantMenus from "../Resources/RestaurantMenus";
 import RestList from "../Resources/RestaurantsList";
-import {useNavigation} from '@react-navigation/native';
-
+import {useNavigation} from "@react-navigation/native";
 
 const MenuScreen = (props) => {
 
@@ -48,7 +47,6 @@ const MenuScreen = (props) => {
         let menuName = "menu0";
 
         for (let i = 0; i < rests.length; i++) {
-
             if (rests[i].restaurant_id == id) {
                 setRestaurant(rests[i]);
                 menuName = "menu"+id;
@@ -63,11 +61,6 @@ const MenuScreen = (props) => {
     const [total, updateTotal] = useState(0.00);
     const [counter, updateCounter] = useState(0);
     const [order, updateOrder] = useState([]);
-
-
-
-
-
 
     const renderCategories = ({item})=> (
         <TouchableWithoutFeedback style={styles.optionButton} onPress={() => jumpTo(item.title)}>
@@ -285,9 +278,6 @@ const styles = StyleSheet.create({
     },
     bottomPartText: {
         fontSize:15,
-        height: height*0.14,
-        justifyContent: 'center',
-        padding: 13,
     }
 })
 
