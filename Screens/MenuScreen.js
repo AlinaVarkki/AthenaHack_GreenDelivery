@@ -6,10 +6,44 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import MenuItem from "../Components/MenuItem";
 import RestaurantMenus from "../Resources/RestaurantMenus";
 
-const MenuScreen = ({restaurantMenu}) => {
+const MenuScreen = ({rId}) => {
+    console.log(rId);
+    let id = global.currentListing
+    let m;
+    if(id == 1){
+        m = RestaurantMenus.menu1
+    }else if(id == 2){
+        m = RestaurantMenus.menu2
+    }else if(id == 3){
+        m = RestaurantMenus.menu3
+    }else if(id == 4){
+        m = RestaurantMenus.menu4
+    }else if(id == 5){
+        m = RestaurantMenus.menu5
+    }else if(id == 6){
+        m = RestaurantMenus.menu6
+    }else if(id == 7){
+        m = RestaurantMenus.menu7
+    }else if(id == 8){
+        m = RestaurantMenus.menu8
+    }else if(id == 9){
+        m = RestaurantMenus.menu9
+    }else if(id == 10){
+        m = RestaurantMenus.menu10
+    }else if(id == 11){
+        m = RestaurantMenus.menu11
+    }else if(id == 12){
+        m = RestaurantMenus.menu12
+    }else if(id == 13){
+        m = RestaurantMenus.menu13
+    }else if(id == 14){
+        m = RestaurantMenus.menu14
+    }else if(id == 15){
+        m = RestaurantMenus.menu15
+    }
 
-    console.log(restaurantMenu);
-    const m = RestaurantMenus.menus
+    // const m = RestaurantMenus.menus
+
 
     const restaurant = {
         restaurant_id: 1,
