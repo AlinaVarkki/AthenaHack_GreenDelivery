@@ -50,7 +50,7 @@ const CartScreen = (props) => {
                 order[i].quantity += value;
                 setOrder(order);
                 setTotal((100*total + 100*value*order[i].price)/100);
-                setTotalTotal((100*total+100*deliveryFee)/100);
+                setTotalTotal((100*total + 100*deliveryFee)/100);
                 return ;
             }
         }
@@ -91,8 +91,8 @@ const CartScreen = (props) => {
 
             <View style={styles.paymentInfo}>
                 <View style={styles.paymentLine}><Text style={{color: ColourPalette.grey}}>Subtotal</Text><Text style={{color: ColourPalette.grey}}>£{total}</Text></View>
-                <View style={styles.paymentLine}><Text style={{color: ColourPalette.grey}}>Delivery cost</Text><Text style={{color: ColourPalette.grey}}>£{deliveryFee}</Text></View>
-                <View style={styles.paymentLine}><Text style={{fontWeight:'bold',color: ColourPalette.grey}}>Total</Text><Text style={{color: ColourPalette.grey}}>£{totalTotal}</Text></View>
+                <View style={styles.paymentLine}><Text style={{color: ColourPalette.grey}}>Delivery cost</Text><Text style={{color: ColourPalette.grey}}>FREE</Text></View>
+                <View style={styles.paymentLine}><Text style={{fontWeight:'bold',color: ColourPalette.grey}}>Total</Text><Text style={{color: ColourPalette.grey}}>£{total}</Text></View>
 
             </View>
 
