@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {FlatList} from 'react-native';
 import Restaurant from "./Restaurant";
+import FavouritesRestaurant from "./FavouritesRestaurant";
 
 export default function Feed(){
 
@@ -10,22 +11,23 @@ export default function Feed(){
             title: 'Taco Bell',
             category: 'Mexican • Burrito',
             deliveryTime: "20 - 25",
-            priceCategory: "££",
+
             deliveryPrice: 2,
-            image : require('../Resources/food.jpg')
+            image : require('../Resources/food.jpg'),
+            logo: require('../Resources/Logos/starbucks.png')
         },{
             restaurant_id: 2,
             title: 'Paesano',
             category: 'Italian • Pizza',
             deliveryTime: "30 - 35",
-            priceCategory: "£",
             deliveryPrice: 4,
-            image : require('../Resources/food.jpg')
+            image : require('../Resources/food.jpg'),
+            logo: require('../Resources/Logos/picnic.png')
         }
     ]);
 
     const listingRender = ({ item }) => (
-        <Restaurant
+        <FavouritesRestaurant
             restaurant_id = {item.restaurant_id}
             title={item.title}
             category={item.category}
@@ -33,6 +35,7 @@ export default function Feed(){
             priceCategory={item.priceCategory}
             deliveryPrice={item.deliveryPrice}
             image ={item.image}
+            logo={item.logo}
         />
     );
 
