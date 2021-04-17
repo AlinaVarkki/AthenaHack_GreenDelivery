@@ -67,11 +67,6 @@ const MenuScreen = (props) => {
     const [total, updateTotal] = useState(0.00);
     const [counter, updateCounter] = useState(0);
 
-
-
-
-
-
     const renderCategories = ({item})=> (
         <TouchableWithoutFeedback style={styles.optionButton} onPress={() => jumpTo(item.title)}>
             <Text style={styles.option}>{item.title}</Text>

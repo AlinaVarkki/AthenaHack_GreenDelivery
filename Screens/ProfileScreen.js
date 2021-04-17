@@ -13,15 +13,33 @@ const ProfileScreen = () => {
     };
 
     return (
-        <SafeAreaView style = {{paddingTop: 50, backgroundColor: 'white'}}>
-            {/*<Image style = { {width: '90%', height: '90%'} } source={require('../Resources/profile.png')}></Image>*/}
-            <ImageBackground source={require('../Resources/profile.png')} style={{paddingLeft:15, width: '100%', height: '100%'}}>
-                <TouchableOpacity onPress={openSideMenu}>
-                    <View style={styles.sideMenuButton} >
-                        <Icon style={styles.sideMenuButton} name='three-bars' size={37} color= {ColourPalette.green} />
-                    </View>
-                </TouchableOpacity>
-            </ImageBackground>
+        <SafeAreaView style = {{paddingTop: 50, backgroundColor: 'white', height: '100%'}}>
+
+
+            <TouchableOpacity onPress={openSideMenu}>
+                <View style={styles.sideMenuButton}>
+                    <Icon style={styles.sideMenuButton} name='three-bars' size={37} color= {ColourPalette.green} />
+                </View>
+            </TouchableOpacity>
+
+            <Image style = {{alignSelf: "center", height: 150, width:150, marginBottom: 50}} source={require('../Images/profilePhoto.jpg')}/>
+
+            <View style = {{backgroundColor: '#f4f5fa', borderRadius: 15, height: 70, justifyContent:'center', paddingLeft: 15, margin:10}}>
+                <Text >Name</Text>
+                <Text style={{fontWeight: "bold"}}>Slavka Borovska</Text>
+            </View>
+            <View style = {{backgroundColor: '#f4f5fa', borderRadius: 15, height: 70, justifyContent:'center', paddingLeft: 15, margin:10}}>
+                <Text >Email</Text>
+                <Text style={{fontWeight: "bold"}}>slavkaborovska@gmail.com</Text>
+            </View>
+            <View style = {{backgroundColor: '#f4f5fa', borderRadius: 15, height: 70, justifyContent:'center', paddingLeft: 15, margin:10}}>
+                <Text >Phone</Text>
+                <Text style={{fontWeight: "bold"}}>+44 8484 567838</Text>
+            </View>
+            <View style = {{backgroundColor: '#f4f5fa', borderRadius: 15, height: 70, justifyContent:'center', paddingLeft: 15, margin:10}}>
+                <Text >Address</Text>
+                <Text style={{fontWeight: "bold"}}>G1 1QL, 1-4 Personage row</Text>
+            </View>
         </SafeAreaView>
 
     );
@@ -29,8 +47,8 @@ const ProfileScreen = () => {
 
 const styles = StyleSheet.create({
     sideMenuButton: {
-        paddingRight: 10,
-        paddingLeft: 5,
+        paddingRight: 15,
+        paddingLeft: 10,
         paddingBottom: 5,
     },
 });

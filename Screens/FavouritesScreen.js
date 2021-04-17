@@ -25,7 +25,7 @@ export default function FeedScreen(){
                 </View>
                 <View style = {styles.topLeftSection}>
                     <Text style = {styles.locationText}>Your favourite yummy picks</Text>
-                    <Icon style={{alignSelf: 'center', paddingRight: 35,}} name='heart' size={35} color= {ColourPalette.green} />
+                    <Icon style={{alignSelf: 'center', paddingRight: 35,paddingTop: 10,}} name='heart' size={35} color= {ColourPalette.purple} />
                 </View>
             </View>
             <FavouritesFeed style = {styles.feed}/>
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
         fontSize: 24,
         // fontFamily: 'Ubuntu',
         fontWeight: 'bold',
-        color: ColourPalette.purple,
+        color: ColourPalette.green,
         alignSelf: 'center'
     },
 })
