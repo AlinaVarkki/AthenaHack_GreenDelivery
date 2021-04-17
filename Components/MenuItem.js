@@ -22,7 +22,7 @@ const MenuItem = ( {item, onPress}) => {
 
             </View>
             <View style={styles.rightSide}>
-                <Button onPress={onPress}/>
+                <Button name="+" onPress={onPress}/>
             </View>
         </View>
 

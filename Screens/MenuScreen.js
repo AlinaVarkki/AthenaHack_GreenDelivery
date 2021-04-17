@@ -48,18 +48,13 @@ const MenuScreen = (props) => {
         let menuName = "menu0";
 
         for (let i = 0; i < rests.length; i++) {
-            // console.log(rests[i].restaurant_id+ " " + id)
-            // console.log(rests[i].restaurant_id == id)
+
             if (rests[i].restaurant_id == id) {
                 setRestaurant(rests[i]);
                 menuName = "menu"+id;
                 setMenu(RestaurantMenus[menuName])
             }
         }
-        //
-        // console.log(menuName);
-        // console.log(restaurant);
-        // console.log(menu);
 
     },[])
 
@@ -67,6 +62,7 @@ const MenuScreen = (props) => {
 
     const [total, updateTotal] = useState(0.00);
     const [counter, updateCounter] = useState(0);
+    const [order, updateOrder] = useState([]);
 
 
 
@@ -86,10 +82,25 @@ const MenuScreen = (props) => {
     const updateCart = (item) => {
         updateTotal((total*100 + item.price*100)/100);
         updateCounter(counter + 1);
+        const itemID = item.id;
+
+        for (let i = 0; i < order.length; i++) {
+            if (order[i].id == itemID) {
+                order[i].quantity += 1;
+                return;
+            }
+        }
+
+        const add = {id: item.id, title: item.title, price: item.price, quantity: 1}
+        order.push(add);
+
     };
 
     const goToCart = () => {
         console.log("hello from the cart");
+        console.log(order);
+        navigation.navigate("CartScreen", {order: order, total: total, delivery: restaurant.deliveryPrice});
+
     }
 
     const closePage = () => {
@@ -108,7 +119,7 @@ const MenuScreen = (props) => {
 
                     <Image style = {styles.image} source={restaurant.image} />
                     <TouchableOpacity  onPress = {closePage} onClick={closePage}>
-                        <View style={{paddingTop: 35, paddingRight: 10, alignSelf: 'flex-end',}}>
+                        <View style={{paddingTop: 35, paddingRight: 10, alignSelf: 'flex-end'}}>
                             <Icon1   name='close' size={37} color= {ColourPalette.darkGreen} />
                         </View>
                     </TouchableOpacity>
@@ -141,7 +152,6 @@ const MenuScreen = (props) => {
                 />
             </View>
             <View style={styles.menu}>
-                {/*<MenuItem item={box} onPress={()=>updateCart(box)}/>*/}
                 <SectionList
                     sections={menu}
                     renderItem={({item}) => <MenuItem item={item} onPress={()=>updateCart(item)}/>}
@@ -154,7 +164,7 @@ const MenuScreen = (props) => {
             </View>
             </ScrollView>
 
-            <TouchableHighlight activeOpacity={0.6} underlayColor={ColourPalette.lightPurple} style={styles.bottomPartButton} onPress={goToCart}>
+            <TouchableHighlight activeOpacity={0.6} underlayColor={ColourPalette.purple} style={styles.bottomPartButton} onPress={goToCart}>
                         <Text style={styles.bottomPartText}>
                             <Icon name='shoppingcart' size={17} color={'black'}/>  Total £{total}  •  {counter} {counter === 1 ? "Item" : "Items"}</Text>
             </TouchableHighlight>
@@ -190,7 +200,7 @@ const styles = StyleSheet.create({
         minHeight: height*0.33,
     },
     restaurantInfo: {
-        height: height*0.1,
+        height: height*0.08,
         backgroundColor: ColourPalette.lightPurple,
         justifyContent: 'center',
         padding: 10,
@@ -266,22 +276,11 @@ const styles = StyleSheet.create({
         color: 'black',
         fontWeight: 'bold',
     },
-    // bottomPart: {
-    //     backgroundColor: ColourPalette.lightPurple,
-    //     // height: height*0.1,
-    //     borderTopWidth: 1.5,
-    //     borderColor: ColourPalette.purple,
-    //     alignItems: 'center',
-    //     justifyContent: 'center',
-    //     elevation: 0.5,
-    // },
     bottomPartButton:{
-        // backgroundColor: 'white',
         height: height*0.14,
         borderTopWidth: 1.5,
         borderColor: ColourPalette.purple,
         alignItems: 'center',
-        // justifyContent: 'space-evenly',
         elevation: 0.5,
     },
     bottomPartText: {
