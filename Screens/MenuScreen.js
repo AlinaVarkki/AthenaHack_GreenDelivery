@@ -8,9 +8,9 @@ import {
     View,
     SectionList,
     TouchableHighlight,
-    TouchableOpacity
+    TouchableOpacity,
+    TouchableWithoutFeedback
 } from 'react-native';
-import {FlatList, Image, ScrollView, StyleSheet, Text, View, SectionList, TouchableHighlight, TouchableWithoutFeedback} from 'react-native';
 import ColourPalette from "../ColourPalette";
 import {SafeAreaView} from "react-native";
 import Icon from 'react-native-vector-icons/AntDesign';
