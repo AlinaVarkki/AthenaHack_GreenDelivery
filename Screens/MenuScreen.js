@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {FlatList, Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import ColourPalette from "../ColourPalette";
 import {SafeAreaView} from "react-native";
 import Icon from 'react-native-vector-icons/AntDesign';
+import MenuItem from "../Components/MenuItem";
 
 
 
@@ -17,6 +18,171 @@ const MenuScreen = (props) => {
         deliveryPrice: 2,
         image : require('../Resources/food.jpg')
     };
+
+    const menu = [
+        {
+            category: 'Bundles',
+        content: [
+            {
+                id: 1,
+                title: 'Taco Party Bundle',
+                description: '12 crunchy tacos with crisp lettuce, seasoned beef and cheddar cheese',
+                price: 14.99,
+            },
+            {
+                id: 2,
+                title: 'Taco Party Bundle',
+                description: '12 crunchy tacos with crisp lettuce, seasoned beef and cheddar cheese',
+                price: 14.99,
+            },
+            {
+                id: 3,
+                title: 'Taco Party Bundle',
+                description: '12 crunchy tacos with crisp lettuce, seasoned beef and cheddar cheese',
+                price: 14.99,
+            },
+            {
+                id: 4,
+                title: 'Taco Party Bundle',
+                description: '12 crunchy tacos with crisp lettuce, seasoned beef and cheddar cheese',
+                price: 14.99,
+            },
+        ]},
+    {   category: 'Combos',
+        content: [
+            {
+                id: 5,
+                title: 'Taco Party Bundle',
+                description: '12 crunchy tacos with crisp lettuce, seasoned beef and cheddar cheese',
+                price: 14.99,
+            },
+            {
+                id: 6,
+                title: 'Taco Party Bundle',
+                description: '12 crunchy tacos with crisp lettuce, seasoned beef and cheddar cheese',
+                price: 14.99,
+            },
+            {
+                id: 7,
+                title: 'Taco Party Bundle',
+                description: '12 crunchy tacos with crisp lettuce, seasoned beef and cheddar cheese',
+                price: 14.99,
+            },
+            {
+                id: 8,
+                title: 'Taco Party Bundle',
+                description: '12 crunchy tacos with crisp lettuce, seasoned beef and cheddar cheese',
+                price: 14.99,
+            },
+            {
+                id: 9,
+                title: 'Taco Party Bundle',
+                description: '12 crunchy tacos with crisp lettuce, seasoned beef and cheddar cheese',
+                price: 14.99,
+            },
+            {
+                id: 10,
+                title: 'Taco Party Bundle',
+                description: '12 crunchy tacos with crisp lettuce, seasoned beef and cheddar cheese',
+                price: 14.99,
+            },
+            {
+                id: 11,
+                title: 'Taco Party Bundle',
+                description: '12 crunchy tacos with crisp lettuce, seasoned beef and cheddar cheese',
+                price: 14.99,
+            },
+        ]},
+    {   category: 'To Share',
+        content: [
+            {
+                id: 12,
+                title: 'Taco Party Bundle',
+                description: '12 crunchy tacos with crisp lettuce, seasoned beef and cheddar cheese',
+                price: 14.99,
+            },
+            {
+                id: 13,
+                title: 'Taco Party Bundle',
+                description: '12 crunchy tacos with crisp lettuce, seasoned beef and cheddar cheese',
+                price: 14.99,
+            },
+        ]},
+    {   category: 'Tacos',
+        content: [
+            {
+                id: 14,
+                title: 'Taco Party Bundle',
+                description: '12 crunchy tacos with crisp lettuce, seasoned beef and cheddar cheese',
+                price: 14.99,
+            },
+            {
+                id: 15,
+                title: 'Taco Party Bundle',
+                description: '12 crunchy tacos with crisp lettuce, seasoned beef and cheddar cheese',
+                price: 14.99,
+            },
+            {
+                id: 16,
+                title: 'Taco Party Bundle',
+                description: '12 crunchy tacos with crisp lettuce, seasoned beef and cheddar cheese',
+                price: 14.99,
+            },
+            {
+                id: 17,
+                title: 'Taco Party Bundle',
+                description: '12 crunchy tacos with crisp lettuce, seasoned beef and cheddar cheese',
+                price: 14.99,
+            },
+            {
+                id: 18,
+                title: 'Taco Party Bundle',
+                description: '12 crunchy tacos with crisp lettuce, seasoned beef and cheddar cheese',
+                price: 14.99,
+            },
+
+        ]},
+    {   category: 'Burritos',
+        content: [
+            {
+                id: 19,
+                title: 'Taco Party Bundle',
+                description: '12 crunchy tacos with crisp lettuce, seasoned beef and cheddar cheese',
+                price: 14.99,
+            },
+            {
+                id: 20,
+                title: 'Taco Party Bundle',
+                description: '12 crunchy tacos with crisp lettuce, seasoned beef and cheddar cheese',
+                price: 14.99,
+            },
+            {
+                id: 21,
+                title: 'Taco Party Bundle',
+                description: '12 crunchy tacos with crisp lettuce, seasoned beef and cheddar cheese',
+                price: 14.99,
+            },
+        ]}
+    ];
+
+
+    const renderCategories = ({item})=> (
+        <Text style={styles.option}>{item.category}</Text>
+    );
+
+    const renderMenuItem = ({ item }) => (
+        <MenuItem title={item.title} />
+    );
+
+    const showMenu = () => {
+        return (
+            <FlatList
+            data={menu}
+            renderItem={renderMenuItem}
+            keyExtractor={item => item}
+        />
+        )
+    }
 
     return(
         <SafeAreaView style={styles.container}>
@@ -44,10 +210,15 @@ const MenuScreen = (props) => {
 
             </View>
             <View style={styles.horizontalOptions}>
-
+                <FlatList
+                    data={menu}
+                    renderItem={renderCategories}
+                    keyExtractor={item => item.category}
+                    horizontal ={true}
+                />
             </View>
             <View style={styles.menu}>
-
+                {/*{showMenu()}*/}
             </View>
 
         </SafeAreaView>
@@ -82,10 +253,21 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     horizontalOptions: {
-        height: '6%',
+        height: '7%',
     },
+
+    option:{
+        backgroundColor: ColourPalette.purple,
+        color: 'white',
+        fontSize: 15,
+        padding: 7,
+        margin: 7,
+        borderRadius: 20,
+        justifyContent: 'center',
+    },
+
     menu: {
-        height: '52%',
+        height: '50%',
         backgroundColor: ColourPalette.grey,
     },
     upperSection: {
