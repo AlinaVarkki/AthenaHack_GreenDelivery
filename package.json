@@ -23,6 +23,7 @@
     "@babel/core": "^7.9.0",
     "@react-navigation/drawer": "^5.12.5",
     "@react-navigation/native": "^5.9.4",
+    "react-native-payment-card": "^1.0.61",
     "react-native-vector-icons": "^8.1.0",
     "react-navigation": "^4.4.4"
   },
