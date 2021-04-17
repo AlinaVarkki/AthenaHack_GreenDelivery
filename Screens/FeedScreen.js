@@ -5,6 +5,7 @@ import Feed from "../Components/Feed";
 import Icon from "react-native-vector-icons/Octicons";
 import {useNavigation} from '@react-navigation/native';
 
+import RestList from "../Resources/RestaurantsList";
 export default function FeedScreen(){
 
 
@@ -28,7 +29,7 @@ export default function FeedScreen(){
                     <Text style = {styles.locationText}>GL 1QL, Glasgow</Text>
                 </View>
             </View>
-            <Feed style = {styles.feed}/>
+            <Feed style = {styles.feed} restaurants = {RestList.restaurantsList}/>
         </SafeAreaView>
     );
 }

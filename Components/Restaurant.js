@@ -2,17 +2,23 @@ import React from 'react';
 import {Image, StyleSheet, Text, TouchableWithoutFeedback, View} from 'react-native';
 import Icon from 'react-native-vector-icons/EvilIcons';
 import ColourPalette from "../ColourPalette";
+import {useNavigation} from "@react-navigation/native";
+
+import RestaurantMenus from "../Resources/RestaurantMenus";
 
 function Restaurant({restaurant_id, title, category, image, deliveryTime, priceCategory, deliveryPrice, timeMeasurement}){
 
-    // const navigation = useNavigation();
 
-    // function seeListing(){
-    //     navigation.navigate('FullListing', {listID: listing_id, username: user, creator: creator})
-    // }
+
+    const navigation = useNavigation();
+
+    function seeListing(){
+        // navigation.navigate('MenuScreen', {listID: listing_id, username: user, creator: creator})
+        navigation.navigate('MenuScreen')
+    }
 
     return (
-        <TouchableWithoutFeedback>
+        <TouchableWithoutFeedback onPress = {seeListing}>
             <View style = {styles.listing}>
                 <View style = {styles.upperSection}>
                     <Image style = {styles.image} source={image} />
