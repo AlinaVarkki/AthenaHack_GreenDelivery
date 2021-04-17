@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import FeedScreen from "./Screens/FeedScreen";
 import WelcomeScreen from "./Screens/WelcomeScreen";
 import DrawerNavigation from "./Navigators/DrawerNavigation";
+import CardPaymentScreen from "./Screens/CardPaymentScreen";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
     //   {/*<WelcomeScreen/>*/}
     // </View>
       <DrawerNavigation/>
+    //   <CardPaymentScreen/>
   );
 }
 

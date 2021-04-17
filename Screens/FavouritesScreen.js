@@ -4,9 +4,9 @@ import ColourPalette from "../ColourPalette";
 import Feed from "../Components/Feed";
 import Icon from "react-native-vector-icons/Octicons";
 import {useNavigation} from '@react-navigation/native';
+import FavouritesFeed from "../Components/FavouritesFeed";
 
 export default function FeedScreen(){
-
 
     const navigation = useNavigation();
 
@@ -24,11 +24,10 @@ export default function FeedScreen(){
                 <View style={styles.sideMenuButton}>
                 </View>
                 <View style = {styles.topLeftSection}>
-                    <Text style = {styles.text}>Your GREEN delivery</Text>
-                    <Text style = {styles.locationText}>GL 1QL, Glasgow</Text>
+                    <Text style = {styles.locationText}>Your favourite yummy picks</Text>
                 </View>
             </View>
-            <Feed style = {styles.feed}/>
+            <FavouritesFeed style = {styles.feed}/>
         </SafeAreaView>
     );
 }
@@ -60,11 +59,11 @@ const styles = StyleSheet.create({
     },
 
     locationText:{
-        fontSize: 26.5,
+        fontSize: 24,
         // fontFamily: 'Ubuntu',
         fontWeight: 'bold',
         color: ColourPalette.purple,
-        alignSelf: 'flex-end'
+        alignSelf: 'center'
     },
     text:{
         fontSize: 16.5,
