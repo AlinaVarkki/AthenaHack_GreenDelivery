@@ -10,7 +10,8 @@ import {
     TouchableHighlight,
     TouchableOpacity,
     TouchableWithoutFeedback,
-    SafeAreaView
+    SafeAreaView,
+    Dimensions
 } from 'react-native';
 import ColourPalette from "../ColourPalette";
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -278,6 +279,10 @@ const styles = StyleSheet.create({
     },
     bottomPartText: {
         fontSize:15,
+        height: height*0.14,
+        justifyContent: 'center',
+        padding: 13
+
     }
 })
 
