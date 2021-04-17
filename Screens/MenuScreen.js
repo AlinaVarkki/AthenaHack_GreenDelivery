@@ -158,10 +158,16 @@ const MenuScreen = (props) => {
             </View>
             </ScrollView>
 
-            <TouchableHighlight activeOpacity={0.6} underlayColor={ColourPalette.purple} style={styles.bottomPartButton} onPress={goToCart}>
+            <TouchableHighlight activeOpacity={0.6} underlayColor={ColourPalette.lightPurple} style={styles.bottomPartButton} onPress={goToCart}>
+                <View>
                         <Text style={styles.bottomPartText}>
-                            <Icon name='shoppingcart' size={17} color={'black'}/>  Total £{total}  •  {counter} {counter === 1 ? "Item" : "Items"}</Text>
-            </TouchableHighlight>
+                            £{total}  •  {counter} {counter === 1 ? "Item" : "Items"}</Text>
+                    <Text style={{fontSize: 12}}>
+                        <Icon name='shoppingcart' size={12} color={'black'}/>  Tap to checkout.
+                    </Text>
+
+                </View>
+                </TouchableHighlight>
 
         </SafeAreaView>
 
@@ -271,7 +277,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     bottomPartButton:{
-        height: height*0.14,
+        height: height*0.16,
         borderTopWidth: 1.5,
         borderColor: ColourPalette.purple,
         alignItems: 'center',
@@ -279,11 +285,13 @@ const styles = StyleSheet.create({
     },
     bottomPartText: {
         fontSize:15,
-        height: height*0.14,
+        // height: height*0.14,
         justifyContent: 'center',
-        padding: 13
+        paddingTop: 13,
+        paddingBottom: 4,
 
-    }
+    },
+
 })
 
 
