@@ -14,9 +14,10 @@ function Restaurant({restaurant_id, title, category, image, deliveryTime, priceC
 
     function seeListing(){
         // navigation.navigate('MenuScreen', {listID: listing_id, username: user, creator: creator})
-        console.log(restaurant_id);
-        global.currentListing = restaurant_id;
-        navigation.navigate('MenuScreen')
+        // console.log("hello from heree")
+        // console.log(restaurant_id);
+        // global.currentListing = restaurant_id;
+        navigation.navigate('MenuScreen', {idR: restaurant_id})
     }
 
     return (

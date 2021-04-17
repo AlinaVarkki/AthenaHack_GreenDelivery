@@ -4,16 +4,10 @@ import ColourPalette from "../ColourPalette";
 import Button from "./Button";
 
 
-const box = {
-    id: 0,
-    title: 'Reusable box',
-    description: '',
-    price: '5',
-    image: require('../Resources/food.jpg')
-};
 
 const MenuItem = ( {item, onPress}) => {
 
+    // const img = require(item.image);
 
     return (
         <View style={styles.container}>
@@ -23,7 +17,9 @@ const MenuItem = ( {item, onPress}) => {
                 <Text style={styles.price}>£{item.price}</Text>
             </View>
             <View style={styles.imagePart}>
-                <Image style={styles.image} source={item.image}/>
+                {/*<Image style={styles.image} source={item.image}/>*/}
+                <Image style = {styles.image} source= {require('../Resources/food.jpg')}/>
+
             </View>
             <View style={styles.rightSide}>
                 <Button onPress={onPress}/>

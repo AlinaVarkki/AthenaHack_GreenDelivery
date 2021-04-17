@@ -1,78 +1,71 @@
 import React, {useEffect, useState} from 'react';
-import {FlatList, Image, ScrollView, StyleSheet, Text, View, SectionList, TouchableHighlight} from 'react-native';
+import {FlatList, Image, ScrollView, StyleSheet, Text, View, SectionList, TouchableHighlight, TouchableWithoutFeedback} from 'react-native';
 import ColourPalette from "../ColourPalette";
 import {SafeAreaView} from "react-native";
 import Icon from 'react-native-vector-icons/AntDesign';
 import MenuItem from "../Components/MenuItem";
 import RestaurantMenus from "../Resources/RestaurantMenus";
+import RestList from "../Resources/RestaurantsList";
 
-const MenuScreen = ({rId}) => {
-    console.log(rId);
-    let id = global.currentListing
-    let m;
-    if(id == 1){
-        m = RestaurantMenus.menu1
-    }else if(id == 2){
-        m = RestaurantMenus.menu2
-    }else if(id == 3){
-        m = RestaurantMenus.menu3
-    }else if(id == 4){
-        m = RestaurantMenus.menu4
-    }else if(id == 5){
-        m = RestaurantMenus.menu5
-    }else if(id == 6){
-        m = RestaurantMenus.menu6
-    }else if(id == 7){
-        m = RestaurantMenus.menu7
-    }else if(id == 8){
-        m = RestaurantMenus.menu8
-    }else if(id == 9){
-        m = RestaurantMenus.menu9
-    }else if(id == 10){
-        m = RestaurantMenus.menu10
-    }else if(id == 11){
-        m = RestaurantMenus.menu11
-    }else if(id == 12){
-        m = RestaurantMenus.menu12
-    }else if(id == 13){
-        m = RestaurantMenus.menu13
-    }else if(id == 14){
-        m = RestaurantMenus.menu14
-    }else if(id == 15){
-        m = RestaurantMenus.menu15
-    }
+const MenuScreen = (props) => {
 
-    // console.log(restaurantMenu);
-    // const m = RestaurantMenus.menus;
+    const id = props.route.params.idR
+    console.log(id)
+
+    const [restaurant,setRestaurant] = useState(
+        {
+            restaurant_id: 0,
+            title: 'Taco Bell',
+            category: 'Mexican • Burrito',
+            deliveryTime: "20 - 25",
+            priceCategory: "££",
+            deliveryPrice: 2,
+            image: require('../Resources/food.jpg'),
+        }
+    );
+    const [menu,setMenu] = useState(RestaurantMenus.menu1);
+
+
+    useEffect(() => {
+        const rests = RestList.restaurantsList;
+
+        let menuName = "menu0";
+
+        for (let i = 0; i < rests.length; i++) {
+            // console.log(rests[i].restaurant_id+ " " + id)
+            // console.log(rests[i].restaurant_id == id)
+            if (rests[i].restaurant_id == id) {
+                setRestaurant(rests[i]);
+                menuName = "menu"+id;
+                setMenu(RestaurantMenus[menuName])
+            }
+        }
+        //
+        // console.log(menuName);
+        // console.log(restaurant);
+        // console.log(menu);
+
+    },[])
+
 
 
     const [total, updateTotal] = useState(0.00);
     const [counter, updateCounter] = useState(0);
 
-    const box = {
-        id: 0,
-        title: 'Reusable box',
-        description: 'One fancy fancy fancy fancy super fancy duddy',
-        price: 3.99,
-        image: require('../Resources/food.jpg')
-    };
 
-    const restaurant = {
-        restaurant_id: 1,
-        title: 'Taco Bell',
-        category: 'Mexican • Burrito',
-        deliveryTime: "20 - 25",
-        priceCategory: "££",
-        deliveryPrice: 2,
-        image : require('../Resources/food.jpg')
-    };
 
-    const [menu, setMenu] = useState(m);
+
 
 
     const renderCategories = ({item})=> (
-        <Text style={styles.option}>{item.title}</Text>
+        <TouchableWithoutFeedback style={styles.optionButton} onPress={() => jumpTo(item.title)}>
+            <Text style={styles.option}>{item.title}</Text>
+        </TouchableWithoutFeedback>
     );
+
+    const jumpTo = (name) => {
+        console.log(name);
+    }
 
     const updateCart = (item) => {
         updateTotal((total*100 + item.price*100)/100);
@@ -91,7 +84,8 @@ const MenuScreen = ({rId}) => {
             <ScrollView>
             <View style = {styles.listing}>
                 <View style = {styles.upperSection}>
-                    <Image style = {styles.image} source={restaurant.image} />
+                    <Image style = {styles.image} source= {require('../Resources/food.jpg')}/>
+
                 </View>
                 <View style = {styles.lowerSection}>
                     <View style = {styles.lowerLeftSection}>
@@ -121,7 +115,7 @@ const MenuScreen = ({rId}) => {
                 />
             </View>
             <View style={styles.menu}>
-                <MenuItem item={box} onPress={()=>updateCart(box)}/>
+                {/*<MenuItem item={box} onPress={()=>updateCart(box)}/>*/}
                 <SectionList
                     sections={menu}
                     renderItem={({item}) => <MenuItem item={item} onPress={()=>updateCart(item)}/>}
@@ -135,14 +129,14 @@ const MenuScreen = ({rId}) => {
             </ScrollView>
 
             <TouchableHighlight activeOpacity={0.6} underlayColor={ColourPalette.lightPurple} style={styles.bottomPartButton} onPress={goToCart}>
-                        <Text style={styles.bottomPartText}>Total £{total}  •  {counter} {counter === 1 ? "Item" : "Items"}</Text>
+                        <Text style={styles.bottomPartText}>
+                            <Icon name='shoppingcart' size={17} color={'black'}/>  Total £{total}  •  {counter} {counter === 1 ? "Item" : "Items"}</Text>
             </TouchableHighlight>
 
         </SafeAreaView>
 
 
-
-    )
+    );
 
 }
 
@@ -172,18 +166,24 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
 
-    option:{
+    optionButton: {
         backgroundColor: ColourPalette.purple,
-        color: 'white',
-        fontSize: 15,
-        paddingVertical: 10,
-        paddingHorizontal: 12,
         margin: 7,
         borderRadius: 20,
         justifyContent: 'center',
         alignItems: 'center',
-
-        // height:'75%',
+    },
+    option:{
+        color: 'white',
+        fontSize: 15,
+        paddingVertical: 10,
+        paddingHorizontal: 12,
+        // backgroundColor: ColourPalette.purple,
+        backgroundColor: ColourPalette.purple,
+        margin: 7,
+        borderRadius: 20,
+        justifyContent: 'center',
+        alignItems: 'center',
 
     },
 
@@ -255,4 +255,4 @@ const styles = StyleSheet.create({
 })
 
 
-export default MenuScreen
+export default MenuScreen;

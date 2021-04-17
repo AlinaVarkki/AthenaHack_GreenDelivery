@@ -1,6 +1,16 @@
+
 export default class RestList{
 
     static restaurantsList = [
+        {
+            restaurant_id: 0,
+            title: 'Taco Bell',
+            category: 'Mexican • Burrito',
+            deliveryTime: "20 - 25",
+            priceCategory: "££",
+            deliveryPrice: 2,
+            image: require('../Resources/food.jpg'),
+        },
         {
             restaurant_id: 1,
             title: 'Taco Bell',
@@ -8,7 +18,7 @@ export default class RestList{
             deliveryTime: "20 - 25",
             priceCategory: "££",
             deliveryPrice: 2,
-            image : require('../Resources/food.jpg')
+            image: require('../Resources/food.jpg'),
         },{
             restaurant_id: 2,
             title: 'Paesano',
@@ -16,7 +26,8 @@ export default class RestList{
             deliveryTime: "30 - 35",
             priceCategory: "£",
             deliveryPrice: 4,
-            image : require('../Resources/food.jpg')
+            image: require('../Resources/food.jpg'),
+
         },{
             restaurant_id: 3,
             title: 'restur',
@@ -24,7 +35,8 @@ export default class RestList{
             deliveryTime: 5,
             priceCategory: "$$$",
             deliveryPrice: 4,
-            image : require('../Resources/food.jpg')
+            image: require('../Resources/food.jpg'),
+
         },{
             restaurant_id: 4,
             title: 'restur',
@@ -32,7 +44,8 @@ export default class RestList{
             deliveryTime: 5,
             priceCategory: "$$$",
             deliveryPrice: 4,
-            image : require('../Resources/food.jpg')
+            image: require('../Resources/food.jpg'),
+
         },
     ]
 
