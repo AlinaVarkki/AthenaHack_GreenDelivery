@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {FlatList, Image, ScrollView, StyleSheet, Text, View, SectionList} from 'react-native';
+import {FlatList, Image, ScrollView, StyleSheet, Text, View, SectionList, TouchableHighlight} from 'react-native';
 import ColourPalette from "../ColourPalette";
 import {SafeAreaView} from "react-native";
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -9,10 +9,19 @@ import RestaurantMenus from "../Resources/RestaurantMenus";
 const MenuScreen = ({restaurantMenu}) => {
 
     console.log(restaurantMenu);
-    const m = RestaurantMenus.menus
+    const m = RestaurantMenus.menus;
 
 
     const [total, updateTotal] = useState(0.00);
+    const [counter, updateCounter] = useState(0);
+
+    const box = {
+        id: 0,
+        title: 'Reusable box',
+        description: 'One fancy fancy fancy fancy super fancy duddy',
+        price: 3.99,
+        image: require('../Resources/food.jpg')
+    };
 
     const restaurant = {
         restaurant_id: 1,
@@ -30,33 +39,22 @@ const MenuScreen = ({restaurantMenu}) => {
     const renderCategories = ({item})=> (
         <Text style={styles.option}>{item.title}</Text>
     );
-    //
-    // const renderMenuItem = ({ item }) => (
-    //     <MenuItem title={item} />
-    // );
 
-    // const showMenu = () => {
-    //     return (
-    //         <SectionList
-    //         data={menu}
-    //         renderItem={renderMenuItem}
-    //         keyExtractor={(item, index) => item + index}
-    //         renderSectionHeader={({ section: { category } }) => (
-    //                     <Text style={styles.menuHeader}>{category}</Text>
-    //                   )}
-    //     />
-    //     )
-    // };
+    const updateCart = (item) => {
+        updateTotal((total*100 + item.price*100)/100);
+        updateCounter(counter + 1);
+    };
 
-    //keyExtractor={(item, index) => item + index}
-    //       renderItem={({ item }) => <Item title={item} />}
-    //       renderSectionHeader={({ section: { title } }) => (
-    //         <Text style={styles.header}>{title}</Text>
-    //       )}
-    //     />
+    const goToCart = () => {
+        console.log("hello from the cart");
+    }
+
 
     return(
+
+
         <SafeAreaView style={styles.container}>
+            <ScrollView>
             <View style = {styles.listing}>
                 <View style = {styles.upperSection}>
                     <Image style = {styles.image} source={restaurant.image} />
@@ -89,19 +87,22 @@ const MenuScreen = ({restaurantMenu}) => {
                 />
             </View>
             <View style={styles.menu}>
-                <MenuItem onPress={()=>console.log("hello box")}/>
+                <MenuItem item={box} onPress={()=>updateCart(box)}/>
                 <SectionList
                     sections={menu}
-                    renderItem={({item}) => <MenuItem item={item} onPress={()=>console.log("hello"+item.id)}/>}
+                    renderItem={({item}) => <MenuItem item={item} onPress={()=>updateCart(item)}/>}
                     keyExtractor={(item, index) => index}
                     renderSectionHeader={({ section: { title } }) => (
                         <Text style={styles.menuHeader}>{title}</Text>
                     )}
+                    scrollEnabled={false}
                 />
             </View>
-            <View style={styles.bottomPart}>
-                <Text>Total £{total} • Items </Text>
-            </View>
+            </ScrollView>
+
+            <TouchableHighlight activeOpacity={0.6} underlayColor={ColourPalette.lightPurple} style={styles.bottomPartButton} onPress={goToCart}>
+                        <Text style={styles.bottomPartText}>Total £{total}  •  {counter} {counter === 1 ? "Item" : "Items"}</Text>
+            </TouchableHighlight>
 
         </SafeAreaView>
 
@@ -120,36 +121,40 @@ const styles = StyleSheet.create({
     listing: {
         flex:1,
         backgroundColor: '#fff',
-        // marginBottom: 20,
         overflow: 'hidden',
         width: '100%',
-        // height: 260,
         elevation: 0.5,
-
+        minHeight: 200,
     },
     restaurantInfo: {
-        height: '8%',
+        height: '4%',
         backgroundColor: ColourPalette.lightPurple,
         justifyContent: 'center',
         padding: 10,
     },
     horizontalOptions: {
-        height: '7%',
+        height: '3.5%',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 
     option:{
         backgroundColor: ColourPalette.purple,
         color: 'white',
         fontSize: 15,
-        padding: 7,
+        paddingVertical: 10,
+        paddingHorizontal: 12,
         margin: 7,
         borderRadius: 20,
         justifyContent: 'center',
         alignItems: 'center',
+
+        // height:'75%',
+
     },
 
     menu: {
-        height: '45%',
+        minHeight: '40%',
         paddingHorizontal: 10,
         // backgroundColor: ColourPalette.grey,
     },
@@ -162,7 +167,6 @@ const styles = StyleSheet.create({
         flex: 7,
     },
     lowerSection: {
-        flex: 2,
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingTop: 5,
@@ -194,12 +198,25 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     bottomPart: {
-        backgroundColor: 'white',
+        backgroundColor: ColourPalette.lightPurple,
         height: '7%',
         borderTopWidth: 1.5,
         borderColor: ColourPalette.purple,
         alignItems: 'center',
         justifyContent: 'center',
+        elevation: 0.5,
+    },
+    bottomPartButton:{
+        // backgroundColor: 'white',
+        height: '7%',
+        borderTopWidth: 1.5,
+        borderColor: ColourPalette.purple,
+        alignItems: 'center',
+        justifyContent: 'center',
+        elevation: 0.5,
+    },
+    bottomPartText: {
+        fontSize:15,
     }
 })
 

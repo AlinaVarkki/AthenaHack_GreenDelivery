@@ -12,7 +12,7 @@ const box = {
     image: require('../Resources/food.jpg')
 };
 
-const MenuItem = ( {item = box, onPress}) => {
+const MenuItem = ( {item, onPress}) => {
 
 
     return (
