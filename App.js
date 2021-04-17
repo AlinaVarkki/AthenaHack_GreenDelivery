@@ -19,6 +19,7 @@ export default function App() {
       // <DrawerNavigation/>
       // <MenuScreen/>
       <StackNavigation/>
+
   );
 }
 
