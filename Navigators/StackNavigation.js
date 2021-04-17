@@ -14,7 +14,7 @@ const StackNavigation  = () => (
         <Stack.Navigator initialRouteName="WelcomeScreen" screenOptions={{ headerShown: false }}>
             <Stack.Screen name="WelcomeScreen" component={WelcomeScreen}/>
             <Stack.Screen name="DrawerNavigation" component={DrawerNavigation}/>
-            <Stack.Screen name="MenuScreen" component={MenuScreen} initialParams={{restaurantMenu: RestaurantMenus.menus}}/>
+            <Stack.Screen name="MenuScreen" component={MenuScreen} initialParams={{}}/>
         </Stack.Navigator>
 
     </NavigationContainer>
