@@ -6,6 +6,8 @@ import Icon from "react-native-vector-icons/Octicons";
 import {useNavigation} from '@react-navigation/native';
 
 export default function FeedScreen(){
+
+
     const navigation = useNavigation();
 
     const openSideMenu = () => {

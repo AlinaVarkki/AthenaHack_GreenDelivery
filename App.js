@@ -2,17 +2,17 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import FeedScreen from "./Screens/FeedScreen";
 import WelcomeScreen from "./Screens/WelcomeScreen";
-import DrawerNavigator from "./Navigators/DrawerNavigator";
-import MainNavigator from "./Navigators/MainNavigator";
+import DrawerNavigation from "./Navigators/DrawerNavigation";
 
 export default function App() {
   return (
+
     // <View style={styles.container}>
     //   <FeedScreen/>
-      <MainNavigator/>
+    //   <MainNavigator/>
     //   {/*<WelcomeScreen/>*/}
     // </View>
-    //   <DrawerNavigator/>
+      <DrawerNavigation/>
   );
 }
 
