@@ -1,6 +1,5 @@
 import React from "react";
-import {StyleSheet, Text, Dimensions, Image} from "react-native";
-import {SafeAreaView} from "react-native";
+import {StyleSheet, Text, Dimensions, Image, SafeAreaView} from "react-native";
 import ColourPalette from "../ColourPalette";
 
 const WelcomeScreen = () => {
