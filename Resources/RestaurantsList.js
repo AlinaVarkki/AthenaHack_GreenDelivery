@@ -4,10 +4,10 @@ export default class RestList{
     static restaurantsList = [
         {
             restaurant_id: 0,
-            title: 'Taco Bell',
-            category: 'Mexican • Burrito',
+            title: 'Paesano',
+            category: 'Italian • Pizza',
             deliveryTime: "20 - 25",
-            priceCategory: "££",
+            priceCategory: "£",
             deliveryPrice: 2,
             image: require('../Resources/food.jpg'),
         },

@@ -1,16 +1,24 @@
 
 export default class RestaurantMenus{
 
+    // {
+    //      id: 1,
+    //      title: 'Taco Party Bundle',
+    //      description: '12 crunchy tacos with crisp lettuce, seasoned beef and cheddar cheese',
+    //      price: 14.99,
+    //      image: require('../Resources/food.jpg')
+    // },
+
     static menu0 = [
         {
-            title: 'Bundles',
+            title: 'Pizza',
             data: [
                 {
                     id: 1,
                     title: 'Taco Party Bundle',
                     description: '12 crunchy tacos with crisp lettuce, seasoned beef and cheddar cheese',
                     price: 14.99,
-                    image: require('../Resources/food.jpg')
+                    image: null
                 },
                 {
                     id: 2,
