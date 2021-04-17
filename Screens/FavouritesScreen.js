@@ -25,6 +25,7 @@ export default function FeedScreen(){
                 </View>
                 <View style = {styles.topLeftSection}>
                     <Text style = {styles.locationText}>Your favourite yummy picks</Text>
+                    <Icon style={{alignSelf: 'center', paddingRight: 35,}} name='heart' size={35} color= {ColourPalette.green} />
                 </View>
             </View>
             <FavouritesFeed style = {styles.feed}/>
@@ -45,7 +46,7 @@ const styles = StyleSheet.create({
 
     },
     topSection: {
-        height: '15%',
+        height: '20%',
         flexDirection: 'row',
     },
     sideMenuButton: {
@@ -59,23 +60,12 @@ const styles = StyleSheet.create({
     },
 
     locationText:{
+        paddingTop: 40,
+        paddingRight: 35,
         fontSize: 24,
         // fontFamily: 'Ubuntu',
         fontWeight: 'bold',
         color: ColourPalette.purple,
         alignSelf: 'center'
-    },
-    text:{
-        fontSize: 16.5,
-        // fontFamily: 'Ubuntu',
-        color: ColourPalette.green,
-        alignSelf: 'flex-end'
-    },
-    bottomSection:{
-        paddingTop: 10,
-        alignItems: 'center',
-        height: '8%',
-        flexDirection: 'row',
-        justifyContent: 'center',
     },
 })
