@@ -9,6 +9,8 @@ import Icon2 from "react-native-vector-icons/MaterialIcons";
 import Icon3 from "react-native-vector-icons/FontAwesome";
 import CardPaymentScreen from "../Screens/CardPaymentScreen";
 import FavouritesScreen from "../Screens/FavouritesScreen";
+import ProfileScreen from "../Screens/ProfileScreen";
+import ImpactScreen from "../Screens/ImpactScreen";
 const Drawer = createDrawerNavigator();
 
 
@@ -33,11 +35,11 @@ const DrawerNavigation = () => {
                               }}
             >
 
-                <Drawer.Screen name="Profile" component={FeedScreen} options={{ drawerIcon: () => (<Icon style={ {marginLeft: 30, marginRight: -20}} name='person-outline' size={30} color= {'white'} />)}}/>
+                <Drawer.Screen name="Profile" component={ProfileScreen} options={{ drawerIcon: () => (<Icon style={ {marginLeft: 30, marginRight: -20}} name='person-outline' size={30} color= {'white'} />)}}/>
                 <Drawer.Screen name="Restaurants" component={FeedScreen} options={{drawerIcon: () => (<Icon style={ {marginLeft: 30, marginRight: -20}} name='restaurant-outline' size={30} color= {'white'} />)}}/>
                 <Drawer.Screen name="Favourites" component={FavouritesScreen} options={{drawerIcon: () => (<Icon2 style={ {marginLeft: 30, marginRight: -20}} name='favorite-outline' size={30} color= {'white'} />)}}/>
                 <Drawer.Screen name="Payment" component={CardPaymentScreen} options={{drawerIcon: () => (<Icon2 style={ {marginLeft: 30, marginRight: -20}} name='payment' size={30} color= {'white'} />)}}/>
-                <Drawer.Screen name="My Impact" component={FeedScreen} options={{drawerIcon: () => (<Icon3 style={ {marginLeft: 30, marginRight: -20}} name='recycle' size={30} color= {'white'} />)}}/>
+                <Drawer.Screen name="My Impact" component={ImpactScreen} options={{drawerIcon: () => (<Icon3 style={ {marginLeft: 30, marginRight: -20}} name='recycle' size={30} color= {'white'} />)}}/>
             </Drawer.Navigator>
     );
 }

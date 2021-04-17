@@ -9,17 +9,16 @@ import {
     SectionList,
     TouchableHighlight,
     TouchableOpacity,
-    TouchableWithoutFeedback,
-    SafeAreaView, Dimensions
+    TouchableWithoutFeedback
 } from 'react-native';
 import ColourPalette from "../ColourPalette";
+import {SafeAreaView} from "react-native";
 import Icon from 'react-native-vector-icons/AntDesign';
 import Icon1 from "react-native-vector-icons/Ionicons";
 import MenuItem from "../Components/MenuItem";
 import RestaurantMenus from "../Resources/RestaurantMenus";
 import RestList from "../Resources/RestaurantsList";
-import {useNavigation} from '@react-navigation/native';
-
+import {useNavigation} from "@react-navigation/native";
 
 const MenuScreen = (props) => {
 
@@ -166,7 +165,6 @@ const MenuScreen = (props) => {
 
 }
 
-const {height} = Dimensions.get("screen");
 
 const styles = StyleSheet.create({
     backButton: {
@@ -179,7 +177,7 @@ const styles = StyleSheet.create({
     },
     container: {
         width: '100%',
-        height: height,
+        height: '100%',
     },
     listing: {
         flex:1,
@@ -187,16 +185,16 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
         width: '100%',
         elevation: 0.5,
-        minHeight: height*0.33,
+        minHeight: 200,
     },
     restaurantInfo: {
-        height: height*0.1,
+        height: '4%',
         backgroundColor: ColourPalette.lightPurple,
         justifyContent: 'center',
         padding: 10,
     },
     horizontalOptions: {
-        height: height*0.08,
+        height: '3.5%',
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -266,29 +264,26 @@ const styles = StyleSheet.create({
         color: 'black',
         fontWeight: 'bold',
     },
-    // bottomPart: {
-    //     backgroundColor: ColourPalette.lightPurple,
-    //     // height: height*0.1,
-    //     borderTopWidth: 1.5,
-    //     borderColor: ColourPalette.purple,
-    //     alignItems: 'center',
-    //     justifyContent: 'center',
-    //     elevation: 0.5,
-    // },
-    bottomPartButton:{
-        // backgroundColor: 'white',
-        height: height*0.14,
+    bottomPart: {
+        backgroundColor: ColourPalette.lightPurple,
+        height: '7%',
         borderTopWidth: 1.5,
         borderColor: ColourPalette.purple,
         alignItems: 'center',
-        // justifyContent: 'space-evenly',
+        justifyContent: 'center',
+        elevation: 0.5,
+    },
+    bottomPartButton:{
+        // backgroundColor: 'white',
+        height: '7%',
+        borderTopWidth: 1.5,
+        borderColor: ColourPalette.purple,
+        alignItems: 'center',
+        justifyContent: 'center',
         elevation: 0.5,
     },
     bottomPartText: {
         fontSize:15,
-        height: height*0.14,
-        justifyContent: 'center',
-        padding: 13,
     }
 })
 
