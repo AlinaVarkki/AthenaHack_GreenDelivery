@@ -1,14 +1,25 @@
 import React from "react";
 import {StyleSheet, Text, Dimensions, Image, SafeAreaView} from "react-native";
 import ColourPalette from "../ColourPalette";
+import {useNavigation} from '@react-navigation/native';
+
 
 const WelcomeScreen = () => {
 
+    const navigation = useNavigation();
+
+    const navCheck = () => {
+        navigation.navigate("DrawerNavigation", {screen: "Restaurants" });
+    };
+
+    const finalT = () => {
+        setTimeout(navCheck,1000);
+    }
 
     return (
         <SafeAreaView style={styles.background}>
 
-            <Image style={styles.image} source={require("../Images/logo.png")}/>
+            <Image style={styles.image} source={require("../Images/logo.png")} onLoad={finalT}/>
 
             <Text style={styles.smallerText}>Delicious Food{"\n"}Recyclable Packaging </Text>
 

@@ -251,6 +251,7 @@ const MenuScreen = (props) => {
                 />
             </View>
             <View style={styles.menu}>
+                <MenuItem/>
                 <SectionList
                     sections={menu}
                     renderItem={({item}) => <MenuItem item={item} />}

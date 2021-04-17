@@ -3,7 +3,15 @@ import {StyleSheet, View,Text, Image} from "react-native";
 import ColourPalette from "../ColourPalette";
 
 
-const MenuItem = ({item}) => {
+const box = {
+    id: 0,
+    title: 'Reusable box',
+    description: '',
+    price: '5',
+    image: require('../Resources/food.jpg')
+};
+
+const MenuItem = ( {item = box}) => {
 
 
 
@@ -28,11 +36,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         maxHeight: 100,
         borderColor: ColourPalette.grey,
-        borderWidth: 0.5,
+        borderTopWidth: 0.5,
+        borderBottomWidth: 0.5,
 
     },
     leftSide: {
-        width: '75%'
+        width: '70%'
     },
     title: {
         fontWeight: 'bold',
@@ -51,7 +60,7 @@ const styles = StyleSheet.create({
         alignContent: 'center',
     },
     image:{
-        width: '80%',
+        width: '75%',
         height: 70,
     }
 

@@ -14,7 +14,6 @@ const Drawer = createDrawerNavigator();
 
 const DrawerNavigation = () => {
     return (
-        <NavigationContainer>
             <Drawer.Navigator initialRouteName="Feed" drawerType='back'
                               drawerStyle={{width: '65%',
                                   backgroundColor: ColourPalette.purple,
@@ -40,7 +39,6 @@ const DrawerNavigation = () => {
                 <Drawer.Screen name="Payment" component={CardPaymentScreen} options={{drawerIcon: () => (<Icon2 style={ {marginLeft: 30, marginRight: -20}} name='payment' size={30} color= {'white'} />)}}/>
                 <Drawer.Screen name="My Impact" component={FeedScreen} options={{drawerIcon: () => (<Icon3 style={ {marginLeft: 30, marginRight: -20}} name='recycle' size={30} color= {'white'} />)}}/>
             </Drawer.Navigator>
-        </NavigationContainer>
     );
 }
 
