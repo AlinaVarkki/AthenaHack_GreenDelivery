@@ -9,17 +9,21 @@ import {
     SectionList,
     TouchableHighlight,
     TouchableOpacity,
-    TouchableWithoutFeedback
+    TouchableWithoutFeedback,
+    SafeAreaView, Dimensions
 } from 'react-native';
 import ColourPalette from "../ColourPalette";
-import {SafeAreaView} from "react-native";
 import Icon from 'react-native-vector-icons/AntDesign';
 import Icon1 from "react-native-vector-icons/Ionicons";
 import MenuItem from "../Components/MenuItem";
 import RestaurantMenus from "../Resources/RestaurantMenus";
 import RestList from "../Resources/RestaurantsList";
+import {useNavigation} from '@react-navigation/native';
+
 
 const MenuScreen = (props) => {
+
+    const navigation = useNavigation();
 
     const id = props.route.params.idR
     console.log(id)
@@ -90,7 +94,7 @@ const MenuScreen = (props) => {
 
     const closePage = () => {
         console.log("closing");
-        navigation.navigate('FeedScreen')
+        navigation.navigate("DrawerNavigation", {screen: "Restaurants" });
     }
 
 
@@ -162,6 +166,7 @@ const MenuScreen = (props) => {
 
 }
 
+const {height} = Dimensions.get("screen");
 
 const styles = StyleSheet.create({
     backButton: {
@@ -174,7 +179,7 @@ const styles = StyleSheet.create({
     },
     container: {
         width: '100%',
-        height: '100%',
+        height: height,
     },
     listing: {
         flex:1,
@@ -182,16 +187,16 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
         width: '100%',
         elevation: 0.5,
-        minHeight: 200,
+        minHeight: height*0.33,
     },
     restaurantInfo: {
-        height: '4%',
+        height: height*0.1,
         backgroundColor: ColourPalette.lightPurple,
         justifyContent: 'center',
         padding: 10,
     },
     horizontalOptions: {
-        height: '3.5%',
+        height: height*0.08,
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -261,26 +266,29 @@ const styles = StyleSheet.create({
         color: 'black',
         fontWeight: 'bold',
     },
-    bottomPart: {
-        backgroundColor: ColourPalette.lightPurple,
-        height: '7%',
-        borderTopWidth: 1.5,
-        borderColor: ColourPalette.purple,
-        alignItems: 'center',
-        justifyContent: 'center',
-        elevation: 0.5,
-    },
+    // bottomPart: {
+    //     backgroundColor: ColourPalette.lightPurple,
+    //     // height: height*0.1,
+    //     borderTopWidth: 1.5,
+    //     borderColor: ColourPalette.purple,
+    //     alignItems: 'center',
+    //     justifyContent: 'center',
+    //     elevation: 0.5,
+    // },
     bottomPartButton:{
         // backgroundColor: 'white',
-        height: '7%',
+        height: height*0.14,
         borderTopWidth: 1.5,
         borderColor: ColourPalette.purple,
         alignItems: 'center',
-        justifyContent: 'center',
+        // justifyContent: 'space-evenly',
         elevation: 0.5,
     },
     bottomPartText: {
         fontSize:15,
+        height: height*0.14,
+        justifyContent: 'center',
+        padding: 13,
     }
 })
 
