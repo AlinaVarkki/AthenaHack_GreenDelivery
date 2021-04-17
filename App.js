@@ -4,6 +4,7 @@ import FeedScreen from "./Screens/FeedScreen";
 import WelcomeScreen from "./Screens/WelcomeScreen";
 import DrawerNavigation from "./Navigators/DrawerNavigation";
 import CardPaymentScreen from "./Screens/CardPaymentScreen";
+import MenuScreen from "./Screens/MenuScreen";
 
 export default function App() {
   return (
@@ -13,8 +14,9 @@ export default function App() {
     //   <MainNavigator/>
     //   {/*<WelcomeScreen/>*/}
     // </View>
-      <DrawerNavigation/>
-    //   <CardPaymentScreen/>
+
+      // <DrawerNavigation/>
+      <MenuScreen/>
   );
 }
 
