@@ -3,6 +3,7 @@ import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import ColourPalette from "../ColourPalette";
 import IconButton from "../Components/IconButton";
 import Feed from "../Components/Feed";
+import Icon from "react-native-vector-icons/Octicons";
 
 export default function FeedScreen(){
 
@@ -10,6 +11,7 @@ export default function FeedScreen(){
     return (
         <SafeAreaView style = {styles.feedScreen} >
             <View style = {styles.topSection}>
+                <Icon style={styles.sideMenuButton} name='three-bars' size={37} color= {ColourPalette.green} />
                 <View style={styles.sideMenuButton}>
                     {/*<IconButton iconName='bars' iconBgColor={ColourPalette.darkGreen} size={50}/>*/}
                 </View>
@@ -40,8 +42,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     sideMenuButton: {
-        paddingVertical: '5%',
-        paddingRight: 15,
+        paddingVertical: '8%',
+        paddingLeft: 10,
+        paddingBottom: 10,
     },
     topLeftSection:{
         flex:1,
@@ -53,11 +56,13 @@ const styles = StyleSheet.create({
         // fontFamily: 'Ubuntu',
         fontWeight: 'bold',
         color: ColourPalette.purple,
+        alignSelf: 'flex-end'
     },
     text:{
         fontSize: 15,
         // fontFamily: 'Ubuntu',
-        color: ColourPalette.green
+        color: ColourPalette.green,
+        alignSelf: 'flex-end'
     },
     bottomSection:{
         paddingTop: 10,
