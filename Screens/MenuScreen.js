@@ -4,10 +4,12 @@ import ColourPalette from "../ColourPalette";
 import {SafeAreaView} from "react-native";
 import Icon from 'react-native-vector-icons/AntDesign';
 import MenuItem from "../Components/MenuItem";
-
-
+import RestaurantMenus from "../Resources/RestaurantMenus";
 
 const MenuScreen = ({restaurantMenu}) => {
+
+    console.log(restaurantMenu);
+    const m = RestaurantMenus.menus
 
     const restaurant = {
         restaurant_id: 1,
@@ -19,7 +21,7 @@ const MenuScreen = ({restaurantMenu}) => {
         image : require('../Resources/food.jpg')
     };
 
-    const [menu, setMenu] = useState(restaurantMenu);
+    const [menu, setMenu] = useState(m);
 
 
     const renderCategories = ({item})=> (
