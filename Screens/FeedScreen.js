@@ -50,13 +50,13 @@ const styles = StyleSheet.create({
 
     locationText:{
         fontSize: 24,
-        fontFamily: 'Ubuntu',
+        // fontFamily: 'Ubuntu',
         fontWeight: 'bold',
         color: ColourPalette.purple,
     },
     text:{
         fontSize: 15,
-        fontFamily: 'Ubuntu',
+        // fontFamily: 'Ubuntu',
         color: ColourPalette.green
     },
     bottomSection:{
@@ -66,23 +66,4 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
     },
-    filterMenu: {
-        backgroundColor: ColourPalette.darkGreen,
-        height: '40%',
-        zIndex:1,
-        borderRadius: 20,
-        marginTop: 10,
-    },
-    filterMenuTitle: {
-        fontSize: 25,
-        color: ColourPalette.grey,
-        marginLeft: 20,
-        marginTop: 15,
-        fontWeight: 'normal'
-    },
-    sortBy: {
-        paddingVertical: 10,
-        flexDirection: 'row',
-        justifyContent: 'center',
-    }
 })

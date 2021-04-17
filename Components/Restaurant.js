@@ -3,7 +3,7 @@ import {Image, StyleSheet, Text, TouchableWithoutFeedback, View} from 'react-nat
 import Icon from 'react-native-vector-icons/EvilIcons';
 import ColourPalette from "../ColourPalette";
 
-function Restaurant({listing_id, title, category, image, timeSincePosting, priceCategory, distance, timeMeasurement}){
+function Restaurant({restaurant_id, title, category, image, deliveryTime, priceCategory, deliveryPrice, timeMeasurement}){
 
     // const navigation = useNavigation();
 
@@ -15,7 +15,7 @@ function Restaurant({listing_id, title, category, image, timeSincePosting, price
         <TouchableWithoutFeedback>
             <View style = {styles.listing}>
                 <View style = {styles.upperSection}>
-                    <Image style = {styles.image} source={require('../Resources/food.jpg')} />
+                    <Image style = {styles.image} source={image} />
                 </View>
                 <View style = {styles.lowerSection}>
                     <View style = {styles.lowerLeftSection}>
@@ -26,8 +26,8 @@ function Restaurant({listing_id, title, category, image, timeSincePosting, price
                         </View>
                     </View>
                     <View style = {styles.lowerRightSection}>
-                        <Text style = {{color: ColourPalette.darkGreen}}>{timeSincePosting} {timeMeasurement} ago</Text>
-                        <Text style = {{color: ColourPalette.darkGreen, opacity: .6}}><Icon name="location" size={19} color={ColourPalette.darkGreen} />{distance}km away</Text>
+                        <Text style = {{color: ColourPalette.darkGreen}}>{deliveryTime} {timeMeasurement} min</Text>
+                        <Text style = {{color: ColourPalette.darkGreen, opacity: .6}}>£{deliveryPrice} delivery</Text>
                     </View>
                 </View>
             </View>

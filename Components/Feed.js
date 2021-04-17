@@ -6,51 +6,56 @@ export default function Feed(){
 
     const [listings, setListings] = useState([
         {
-            listing_id: 1,
-            title: 'restur',
-            category: 'food',
-            timeSincePosting: 5,
-            priceCategory: "$$$",
-            distance: 4
+            restaurant_id: 1,
+            title: 'Taco Bell',
+            category: 'Mexican • Burrito',
+            deliveryTime: "20 - 25",
+            priceCategory: "££",
+            deliveryPrice: 2,
+            image : require('../Resources/food.jpg')
         },{
-            listing_id: 2,
-            title: 'restur',
-            category: 'food',
-            timeSincePosting: 5,
-            priceCategory: "$$$",
-            distance: 4
+            restaurant_id: 2,
+            title: 'Paesano',
+            category: 'Italian • Pizza',
+            deliveryTime: "30 - 35",
+            priceCategory: "£",
+            deliveryPrice: 4,
+            image : require('../Resources/food.jpg')
         },{
-            listing_id: 3,
+            restaurant_id: 3,
             title: 'restur',
             category: 'food',
-            timeSincePosting: 5,
+            deliveryTime: 5,
             priceCategory: "$$$",
-            distance: 4
+            deliveryPrice: 4,
+            image : require('../Resources/food.jpg')
         },{
-            listing_id: 4,
+            restaurant_id: 4,
             title: 'restur',
             category: 'food',
-            timeSincePosting: 5,
+            deliveryTime: 5,
             priceCategory: "$$$",
-            distance: 4
+            deliveryPrice: 4,
+            image : require('../Resources/food.jpg')
         },
     ]);
 
     const listingRender = ({ item }) => (
         <Restaurant
-            listing_id = {item.listing_id}
+            restaurant_id = {item.restaurant_id}
             title={item.title}
             category={item.category}
-            timeSincePosting={item.timeSincePosting}
+            deliveryTime={item.deliveryTime}
             priceCategory={item.priceCategory}
-            distance={item.distance}
+            deliveryPrice={item.deliveryPrice}
+            image ={item.image}
         />
     );
 
     return (
         <FlatList style = {{flex: 1}} showsVerticalScrollIndicator={false}
                   data = {listings}
-                  keyExtractor = {item => item.listing_id.toString()}
+                  keyExtractor = {item => item.restaurant_id.toString()}
                   renderItem={listingRender}
         />
     );
