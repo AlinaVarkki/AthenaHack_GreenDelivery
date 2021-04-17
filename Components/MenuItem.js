@@ -33,21 +33,21 @@ const styles = StyleSheet.create({
     container: {
         paddingVertical: 5,
         flexDirection: 'row',
-        height: 100,
+        height: 110,
         borderColor: ColourPalette.grey,
         borderTopWidth: 0.5,
         borderBottomWidth: 0.5,
 
     },
-    // leftSide: {
-    //     width: '65%'
-    // },
     title: {
         fontWeight: 'bold',
         fontSize: 16,
     },
     description: {
         paddingVertical: 3,
+        height: 55,
+
+        overflow: 'hidden',
     },
     price: {
         color: ColourPalette.darkGreen,
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     image:{
-        width: '75%',
+        width: 70,
         height: 70,
     },
     rightSide: {

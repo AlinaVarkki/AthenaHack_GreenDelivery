@@ -62,6 +62,7 @@ const MenuScreen = (props) => {
     const [total, updateTotal] = useState(0.00);
     const [counter, updateCounter] = useState(0);
     const [order, updateOrder] = useState([]);
+    const [heartName, toggleHeartName] = useState('hearto');
 
     const renderCategories = ({item})=> (
         <TouchableWithoutFeedback style={styles.optionButton} onPress={() => jumpTo(item.title)}>
@@ -102,6 +103,14 @@ const MenuScreen = (props) => {
         navigation.navigate("DrawerNavigation", {screen: "Restaurants" });
     }
 
+    const toggleHeart = () => {
+        if (heartName === 'hearto') {
+            toggleHeartName('heart')
+        } else {
+            toggleHeartName('hearto')
+        }
+    }
+
 
     return(
 
@@ -113,8 +122,8 @@ const MenuScreen = (props) => {
 
                     <Image style = {styles.image} source={restaurant.image} />
                     <TouchableOpacity  onPress = {closePage} onClick={closePage}>
-                        <View style={{paddingTop: 35, paddingRight: 10, alignSelf: 'flex-end'}}>
-                            <Icon1   name='close' size={37} color= {ColourPalette.darkGreen} />
+                        <View style={styles.closeButton}>
+                            <Icon1   name='close' size={30} color= {ColourPalette.lightPurple} />
                         </View>
                     </TouchableOpacity>
                 </View>
@@ -133,9 +142,15 @@ const MenuScreen = (props) => {
                 </View>
             </View>
             <View style={styles.restaurantInfo}>
+                <View>
                 <Text style={{fontWeight: 'bold', fontSize: 17}}>Restaurant info </Text>
-                <Text><Icon name='enviroment' size={17} color={'black'}/> Personage row 1-4, G1 1QL</Text>
-
+                <Text><Icon name='enviroment' size={17} color={'black'}/> {restaurant.address}</Text>
+                </View>
+                <TouchableWithoutFeedback onPress={toggleHeart} >
+                    <View style={styles.heart}>
+                    <Icon name={heartName} color={ColourPalette.lightPurple} size={22}/>
+                    </View>
+                </TouchableWithoutFeedback>
             </View>
             <View style={styles.horizontalOptions}>
                 <FlatList
@@ -202,8 +217,26 @@ const styles = StyleSheet.create({
     restaurantInfo: {
         height: height*0.08,
         backgroundColor: ColourPalette.lightPurple,
-        justifyContent: 'center',
+        // opacity: 0.5,
+        // justifyContent: 'center',
         padding: 10,
+        alignItems: 'center',
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    heart: {
+        backgroundColor: ColourPalette.purple,
+        padding: 9,
+        borderRadius: 50,
+        marginRight: 5,
+    },
+    closeButton: {
+        marginTop: 25,
+        marginLeft: 10,
+        padding: 5,
+        alignSelf: 'flex-start',
+        backgroundColor: ColourPalette.purple,
+        borderRadius: 30,
     },
     horizontalOptions: {
         height: height*0.08,
@@ -280,6 +313,7 @@ const styles = StyleSheet.create({
         height: height*0.16,
         borderTopWidth: 1.5,
         borderColor: ColourPalette.purple,
+        backgroundColor: ColourPalette.lightPurple,
         alignItems: 'center',
         elevation: 0.5,
     },
