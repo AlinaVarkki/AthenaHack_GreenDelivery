@@ -1,11 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import FeedScreen from "./Screens/FeedScreen";
 import WelcomeScreen from "./Screens/WelcomeScreen";
+import DrawerNavigation from "./Navigators/DrawerNavigation";
 
 export default function App() {
   return (
-    <WelcomeScreen/>
+
+    // <View style={styles.container}>
+    //   <FeedScreen/>
+    //   <MainNavigator/>
+    //   {/*<WelcomeScreen/>*/}
+    // </View>
+      <DrawerNavigation/>
   );
 }
 
