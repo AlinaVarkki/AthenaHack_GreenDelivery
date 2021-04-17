@@ -9,6 +9,9 @@ import MenuItem from "../Components/MenuItem";
 
 const MenuScreen = (props) => {
 
+
+    const [total, updateTotal] = useState(0.00);
+
     const restaurant = {
         restaurant_id: 1,
         title: 'Taco Bell',
@@ -251,15 +254,18 @@ const MenuScreen = (props) => {
                 />
             </View>
             <View style={styles.menu}>
-                <MenuItem/>
+                <MenuItem onPress={()=>console.log("hello box")}/>
                 <SectionList
                     sections={menu}
-                    renderItem={({item}) => <MenuItem item={item} />}
+                    renderItem={({item}) => <MenuItem item={item} onPress={()=>console.log("hello"+item.id)}/>}
                     keyExtractor={(item, index) => index}
                     renderSectionHeader={({ section: { title } }) => (
                         <Text style={styles.menuHeader}>{title}</Text>
                     )}
                 />
+            </View>
+            <View style={styles.bottomPart}>
+                <Text>Total £{total} • Items </Text>
             </View>
 
         </SafeAreaView>
@@ -273,7 +279,6 @@ const MenuScreen = (props) => {
 
 const styles = StyleSheet.create({
     container: {
-        // height: 260,
         width: '100%',
         height: '100%',
     },
@@ -289,7 +294,7 @@ const styles = StyleSheet.create({
     },
     restaurantInfo: {
         height: '8%',
-        backgroundColor: '#ffefff',
+        backgroundColor: ColourPalette.lightPurple,
         justifyContent: 'center',
         padding: 10,
     },
@@ -309,7 +314,7 @@ const styles = StyleSheet.create({
     },
 
     menu: {
-        height: '50%',
+        height: '45%',
         paddingHorizontal: 10,
         // backgroundColor: ColourPalette.grey,
     },
@@ -353,6 +358,14 @@ const styles = StyleSheet.create({
         color: 'black',
         fontWeight: 'bold',
     },
+    bottomPart: {
+        backgroundColor: 'white',
+        height: '7%',
+        borderTopWidth: 1.5,
+        borderColor: ColourPalette.purple,
+        alignItems: 'center',
+        justifyContent: 'center',
+    }
 })
 
 

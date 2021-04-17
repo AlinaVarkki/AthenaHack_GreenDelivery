@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, View,Text, Image} from "react-native";
 import ColourPalette from "../ColourPalette";
+import Button from "./Button";
 
 
 const box = {
@@ -11,8 +12,7 @@ const box = {
     image: require('../Resources/food.jpg')
 };
 
-const MenuItem = ( {item = box}) => {
-
+const MenuItem = ( {item = box, onPress}) => {
 
 
     return (
@@ -22,8 +22,11 @@ const MenuItem = ( {item = box}) => {
                 <Text style={styles.description}>{item.description}</Text>
                 <Text style={styles.price}>£{item.price}</Text>
             </View>
-            <View style={styles.rightSide}>
+            <View style={styles.imagePart}>
                 <Image style={styles.image} source={item.image}/>
+            </View>
+            <View style={styles.rightSide}>
+                <Button onPress={onPress}/>
             </View>
         </View>
 
@@ -34,14 +37,14 @@ const styles = StyleSheet.create({
     container: {
         paddingVertical: 5,
         flexDirection: 'row',
-        maxHeight: 100,
+        height: 100,
         borderColor: ColourPalette.grey,
         borderTopWidth: 0.5,
         borderBottomWidth: 0.5,
 
     },
     leftSide: {
-        width: '70%'
+        width: '65%'
     },
     title: {
         fontWeight: 'bold',
@@ -54,15 +57,20 @@ const styles = StyleSheet.create({
         color: ColourPalette.darkGreen,
         fontWeight: 'bold'
     },
-    rightSide:{
+    imagePart:{
         width: '25%',
         justifyContent: 'center',
-        alignContent: 'center',
+        alignItems: 'center',
     },
     image:{
         width: '75%',
         height: 70,
-    }
+    },
+    rightSide: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '10%',
+    },
 
 
 });

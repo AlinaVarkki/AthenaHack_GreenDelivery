@@ -17,8 +17,8 @@ export default function App() {
     // </View>
 
       // <DrawerNavigation/>
-      // <MenuScreen/>
-      <StackNavigation/>
+      <MenuScreen/>
+      // <StackNavigation/>
   );
 }
 
