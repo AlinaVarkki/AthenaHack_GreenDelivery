@@ -1,8 +1,11 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, TouchableOpacity, View, Image, ImageBackground, Text} from 'react-native';
+import {SafeAreaView, StyleSheet, TouchableOpacity, View, Image, Text} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import ColourPalette from "../ColourPalette";
 import Icon from "react-native-vector-icons/Octicons";
+import Icon1 from "react-native-vector-icons/FontAwesome5";
+import Icon2 from 'react-native-vector-icons/AntDesign';
+import {ScrollView} from "react-native-gesture-handler";
 
 const ImpactScreen = () => {
 
@@ -13,15 +16,126 @@ const ImpactScreen = () => {
     };
 
     return (
-        <SafeAreaView style = {{paddingTop: 50, backgroundColor: 'white'}}>
-            <ImageBackground source={require('../Resources/Impact.png')} style={{  width: '100%', height: '100%'}}>
-                <TouchableOpacity onPress={openSideMenu}>
-                    <View style={styles.sideMenuButton} >
-                        <Icon style={styles.sideMenuButton} name='three-bars' size={37} color= {ColourPalette.green} />
+        <ScrollView>
+        <SafeAreaView style={{paddingTop: 50, backgroundColor: 'white'}}>
+            <TouchableOpacity onPress={openSideMenu}>
+                <View style={styles.sideMenuButton}>
+                    <Icon style={styles.sideMenuButton} name='three-bars' size={37} color={ColourPalette.green}/>
+                </View>
+            </TouchableOpacity>
+
+            <View style={{flexDirection: 'row'}}>
+
+                <View style={{flex: 1, marginLeft: 19}}>
+                    <View style={{flexDirection: 'row'}}>
+                        <Text style={{fontSize: 70, fontWeight: 'bold', color: "#36383d"}}>12</Text>
+                        <Text style={{
+                            fontSize: 50,
+                            fontWeight: 'bold',
+                            color: "#36383d",
+                            alignSelf: "flex-end",
+                            marginBottom: 4
+                        }}>%</Text>
                     </View>
-                </TouchableOpacity>
-            </ImageBackground>
+                    <Text style={{marginLeft: 5, fontSize: 17}}>less CO2 emissions</Text>
+
+                    <View style={{flexDirection: 'row', marginTop: 13}}>
+                        <Icon1 style={{alignSelf: "center", marginRight: 10}} name='plus' size={26}
+                               color={ColourPalette.purple}/>
+                        <View>
+                            <Text style={{
+                                fontSize: 23,
+                                fontWeight: 'bold',
+                                color: "#36383d",
+                                margin: -5,
+                                marginLeft: 1.5
+                            }}>20</Text>
+                            <Text>turtles saved</Text>
+                        </View>
+                    </View>
+
+                    <View style={{flexDirection: 'row', marginTop: 13}}>
+                        <Icon1 style={{alignSelf: "center", marginRight: 10}} name='plus' size={26}
+                               color={ColourPalette.green}/>
+                        <View>
+                            <Text style={{
+                                fontSize: 23,
+                                fontWeight: 'bold',
+                                color: "#36383d",
+                                margin: -5,
+                                marginLeft: 1.5
+                            }}>20</Text>
+                            <Text>turtles saved</Text>
+                        </View>
+                    </View>
+
+                    <View style={{flexDirection: 'row', marginTop: 13}}>
+                        <Icon1 style={{alignSelf: "center", marginRight: 10}} name='plus' size={26}
+                               color={ColourPalette.darkGreen}/>
+                        <View>
+                            <Text style={{
+                                fontSize: 23,
+                                fontWeight: 'bold',
+                                color: "#36383d",
+                                margin: -5,
+                                marginLeft: 1.5
+                            }}>20</Text>
+                            <Text>turtles saved</Text>
+                        </View>
+                    </View>
+
+                </View>
+                <View style={{flex: 1}}>
+                    <Text style={{
+                        fontSize: 34,
+                        alignSelf: 'flex-end',
+                        marginRight: 30,
+                        marginTop: -50,
+                        color: ColourPalette.green,
+                        fontWeight: 'bold'
+                    }}>My GREEN</Text>
+                    <Text style={{
+                        fontSize: 30,
+                        alignSelf: 'flex-end',
+                        marginRight: 30,
+                        marginTop: -5,
+                        color: ColourPalette.green,
+                        fontWeight: 'bold'
+                    }}>Impact</Text>
+                </View>
+
+            </View>
+
+            <Image style = {{width: 325, height:325, marginLeft: 131, marginTop: -163}} source={{uri: 'https://media.giphy.com/media/Xlrd0dWPniCXxIoG2V/giphy.gif'}}/>
+
+            <View style={{flexDirection: 'row', backgroundColor: "#f0f1fa", padding: 10, borderRadius: 16, margin: 10}}>
+                <Image source={require('../Resources/zoomedContainers.jpg')} style={{height: 70, width: 70, marginRight: 10}}/>
+                <View style ={{ justifyContent: 'center' }}>
+                    <Text style = {{fontWeight: 'bold', fontSize: 17}}>15 purchases total</Text>
+                    <Text>lorem ipsum lorem ipsum</Text>
+                </View>
+                <Icon2 name="bulb1" size={25} color={ColourPalette.purple} style={{marginLeft: 100}}/>
+            </View>
+
+            <View style={{flexDirection: 'row', backgroundColor: "#f0f1fa", padding: 10, borderRadius: 16, margin: 10}}>
+                <Image source={require('../Resources/zoomedContainers.jpg')} style={{height: 70, width: 70, marginRight: 10}}/>
+                <View style ={{ justifyContent: 'center' }}>
+                    <Text style = {{fontWeight: 'bold', fontSize: 17}}>15 purchases total</Text>
+                    <Text>lorem ipsum lorem ipsum</Text>
+                </View>
+                <Icon2 name="bulb1" size={25} color={ColourPalette.purple} style={{marginLeft: 100}}/>
+            </View>
+
+            <View style={{flexDirection: 'row', backgroundColor: "#f0f1fa", padding: 10, borderRadius: 16, margin: 10}}>
+                <Image source={require('../Resources/zoomedContainers.jpg')} style={{height: 70, width: 70, marginRight: 10}}/>
+                <View style ={{ justifyContent: 'center' }}>
+                    <Text style = {{fontWeight: 'bold', fontSize: 17}}>15 purchases total</Text>
+                    <Text>lorem ipsum lorem ipsum</Text>
+                </View>
+                <Icon2 name="bulb1" size={25} color={ColourPalette.purple} style={{marginLeft: 100}}/>
+            </View>
         </SafeAreaView>
+        </ScrollView>
 
     );
 }
