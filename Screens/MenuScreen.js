@@ -1,8 +1,20 @@
 import React, {useEffect, useState} from 'react';
+import {
+    FlatList,
+    Image,
+    ScrollView,
+    StyleSheet,
+    Text,
+    View,
+    SectionList,
+    TouchableHighlight,
+    TouchableOpacity
+} from 'react-native';
 import {FlatList, Image, ScrollView, StyleSheet, Text, View, SectionList, TouchableHighlight, TouchableWithoutFeedback} from 'react-native';
 import ColourPalette from "../ColourPalette";
 import {SafeAreaView} from "react-native";
 import Icon from 'react-native-vector-icons/AntDesign';
+import Icon1 from "react-native-vector-icons/Ionicons";
 import MenuItem from "../Components/MenuItem";
 import RestaurantMenus from "../Resources/RestaurantMenus";
 import RestList from "../Resources/RestaurantsList";
@@ -76,6 +88,11 @@ const MenuScreen = (props) => {
         console.log("hello from the cart");
     }
 
+    const closePage = () => {
+        console.log("closing");
+        navigation.navigate('FeedScreen')
+    }
+
 
     return(
 
@@ -84,8 +101,13 @@ const MenuScreen = (props) => {
             <ScrollView>
             <View style = {styles.listing}>
                 <View style = {styles.upperSection}>
-                    <Image style = {styles.image} source= {require('../Resources/food.jpg')}/>
 
+                    <Image style = {styles.image} source={restaurant.image} />
+                    <TouchableOpacity  onPress = {closePage} onClick={closePage}>
+                        <View style={{paddingTop: 35, paddingRight: 10, alignSelf: 'flex-end',}}>
+                            <Icon1   name='close' size={37} color= {ColourPalette.darkGreen} />
+                        </View>
+                    </TouchableOpacity>
                 </View>
                 <View style = {styles.lowerSection}>
                     <View style = {styles.lowerLeftSection}>
@@ -142,6 +164,14 @@ const MenuScreen = (props) => {
 
 
 const styles = StyleSheet.create({
+    backButton: {
+        flex:2,
+        marginTop:40,
+        marginRight:20,
+        position: 'absolute',
+        top:0,
+        right:0
+    },
     container: {
         width: '100%',
         height: '100%',
