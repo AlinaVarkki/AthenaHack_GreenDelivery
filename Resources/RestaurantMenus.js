@@ -178,7 +178,7 @@ export default class RestaurantMenus{
                 {
                     id: 7,
                     title: 'Espresso',
-                    description: 'A shot of espresso with a rich flavour and caramel-like sweetness.\n',
+                    description: 'A shot of espresso with a rich flavour and caramel-like sweetness.',
                     price: 1.59,
                     image: require('../Images/Menus/menu2/menu2-id7.png'),
                 },
@@ -213,7 +213,7 @@ export default class RestaurantMenus{
                 {
                     id: 12,
                     title: 'English Breakfast Tea',
-                    description: 'Full-bodied black tea with rich, malty undertones.\n',
+                    description: 'Full-bodied black tea with rich, malty undertones.',
                     price: 2.69,
                     image: require('../Images/Menus/menu2/menu2-id12.png'),
                 },
@@ -224,28 +224,28 @@ export default class RestaurantMenus{
                 {
                     id: 1,
                     title: 'Lemon Loaf Cake',
-                    description: '',
+                    description: 'A moist buttery lemon loaf cake topped with a lemon icing glaze and caramelised lemon zest.',
                     price: 3.29,
                     image: null,
                 },
                 {
                     id: 2,
                     title: 'Banana Bread',
-                    description: '',
+                    description: 'Banana loaf bread with pecans and walnuts.',
                     price: 3.29,
                     image: null,
                 },
                 {
                     id: 3,
                     title: 'Vegan Chocolate and Raspberry Mini Loaf Cake',
-                    description: '',
+                    description: 'A mini vegan chocolate loaf cake injected with raspberry jam, and topped with pink icing and dried raspberry pieces.\n',
                     price: 1.89,
                     image: null,
                 },
                 {
                     id: 4,
                     title: 'Chocolate Truffle Loaf Cake',
-                    description: '',
+                    description: 'A moist chocolate loaf cake with dark chocolate chips and topped with a milk chocolate buttercream.',
                     price: 3.29,
                     image: null,
                 }
@@ -506,15 +506,6 @@ export default class RestaurantMenus{
         }
     ]
 
-
-    static menu6 = []
-    static menu7 = []
-    static menu8 = []
-    static menu9 = []
-    static menu10 = []
-    static menu11 = []
-    static menu12 = []
-    static menu13 = []
 
 
 }

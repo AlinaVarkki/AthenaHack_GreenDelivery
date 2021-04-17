@@ -123,7 +123,7 @@ const MenuScreen = (props) => {
                     <Image style = {styles.image} source={restaurant.image} />
                     <TouchableOpacity  onPress = {closePage} onClick={closePage}>
                         <View style={styles.closeButton}>
-                            <Icon1   name='close' size={30} color= {ColourPalette.lightPurple} />
+                            <Icon1 name='close' size={30} color= {ColourPalette.lightPurple} />
                         </View>
                     </TouchableOpacity>
                 </View>
@@ -271,9 +271,10 @@ const styles = StyleSheet.create({
         // backgroundColor: ColourPalette.grey,
     },
     menuHeader:{
-        fontSize: 20,
+        fontSize: 23,
         fontWeight: 'bold',
         padding: 5,
+        marginTop: 3
     },
     upperSection: {
         flex: 7,
