@@ -1,19 +1,26 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import {SafeAreaView, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import ColourPalette from "../ColourPalette";
-import IconButton from "../Components/IconButton";
 import Feed from "../Components/Feed";
 import Icon from "react-native-vector-icons/Octicons";
+import {useNavigation} from '@react-navigation/native';
 
 export default function FeedScreen(){
+    const navigation = useNavigation();
+
+    const openSideMenu = () => {
+        navigation.openDrawer();
+        console.log("hey");
+    };
 
 
     return (
         <SafeAreaView style = {styles.feedScreen} >
             <View style = {styles.topSection}>
-                <Icon style={styles.sideMenuButton} name='three-bars' size={37} color= {ColourPalette.green} />
+                <TouchableOpacity onPress={openSideMenu}>
+                    <Icon style={styles.sideMenuButton} name='three-bars' size={37} color= {ColourPalette.green} />
+                </TouchableOpacity>
                 <View style={styles.sideMenuButton}>
-                    {/*<IconButton iconName='bars' iconBgColor={ColourPalette.darkGreen} size={50}/>*/}
                 </View>
                 <View style = {styles.topLeftSection}>
                     <Text style = {styles.text}>Your GREEN delivery</Text>
@@ -52,14 +59,14 @@ const styles = StyleSheet.create({
     },
 
     locationText:{
-        fontSize: 24,
+        fontSize: 26.5,
         // fontFamily: 'Ubuntu',
         fontWeight: 'bold',
         color: ColourPalette.purple,
         alignSelf: 'flex-end'
     },
     text:{
-        fontSize: 15,
+        fontSize: 16.5,
         // fontFamily: 'Ubuntu',
         color: ColourPalette.green,
         alignSelf: 'flex-end'
