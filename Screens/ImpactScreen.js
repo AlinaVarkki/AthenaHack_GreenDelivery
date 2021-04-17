@@ -4,6 +4,8 @@ import {useNavigation} from '@react-navigation/native';
 import ColourPalette from "../ColourPalette";
 import Icon from "react-native-vector-icons/Octicons";
 import Icon1 from "react-native-vector-icons/FontAwesome5";
+import Icon2 from 'react-native-vector-icons/AntDesign';
+import {ScrollView} from "react-native-gesture-handler";
 
 const ImpactScreen = () => {
 
@@ -14,6 +16,7 @@ const ImpactScreen = () => {
     };
 
     return (
+        <ScrollView>
         <SafeAreaView style={{paddingTop: 50, backgroundColor: 'white'}}>
             <TouchableOpacity onPress={openSideMenu}>
                 <View style={styles.sideMenuButton}>
@@ -84,17 +87,17 @@ const ImpactScreen = () => {
                 </View>
                 <View style={{flex: 1}}>
                     <Text style={{
-                        fontSize: 26,
+                        fontSize: 34,
                         alignSelf: 'flex-end',
-                        marginRight: 20,
-                        marginTop: -40,
+                        marginRight: 30,
+                        marginTop: -50,
                         color: ColourPalette.green,
                         fontWeight: 'bold'
                     }}>My GREEN</Text>
                     <Text style={{
-                        fontSize: 26,
+                        fontSize: 30,
                         alignSelf: 'flex-end',
-                        marginRight: 20,
+                        marginRight: 30,
                         marginTop: -5,
                         color: ColourPalette.green,
                         fontWeight: 'bold'
@@ -103,16 +106,36 @@ const ImpactScreen = () => {
 
             </View>
 
-            <Image style = {{width: 300, height:300, marginLeft: 134, marginTop: -163}} source={{uri: 'https://media.giphy.com/media/Xlrd0dWPniCXxIoG2V/giphy.gif'}}/>
+            <Image style = {{width: 325, height:325, marginLeft: 131, marginTop: -163}} source={{uri: 'https://media.giphy.com/media/Xlrd0dWPniCXxIoG2V/giphy.gif'}}/>
 
-            <View style={{flexDirection: 'row', backgroundColor: ColourPalette.darkGreen}}>
-                <Image source={require('../Resources/zoomedContainers.jpg')} style={{height: 70, width: 70}}/>
-                <View style ={{  }}>
-                    <Text>15 purchases total</Text>
+            <View style={{flexDirection: 'row', backgroundColor: "#f0f1fa", padding: 10, borderRadius: 16, margin: 10}}>
+                <Image source={require('../Resources/zoomedContainers.jpg')} style={{height: 70, width: 70, marginRight: 10}}/>
+                <View style ={{ justifyContent: 'center' }}>
+                    <Text style = {{fontWeight: 'bold', fontSize: 17}}>15 purchases total</Text>
                     <Text>lorem ipsum lorem ipsum</Text>
                 </View>
+                <Icon2 name="bulb1" size={25} color={ColourPalette.purple} style={{marginLeft: 100}}/>
+            </View>
+
+            <View style={{flexDirection: 'row', backgroundColor: "#f0f1fa", padding: 10, borderRadius: 16, margin: 10}}>
+                <Image source={require('../Resources/zoomedContainers.jpg')} style={{height: 70, width: 70, marginRight: 10}}/>
+                <View style ={{ justifyContent: 'center' }}>
+                    <Text style = {{fontWeight: 'bold', fontSize: 17}}>15 purchases total</Text>
+                    <Text>lorem ipsum lorem ipsum</Text>
+                </View>
+                <Icon2 name="bulb1" size={25} color={ColourPalette.purple} style={{marginLeft: 100}}/>
+            </View>
+
+            <View style={{flexDirection: 'row', backgroundColor: "#f0f1fa", padding: 10, borderRadius: 16, margin: 10}}>
+                <Image source={require('../Resources/zoomedContainers.jpg')} style={{height: 70, width: 70, marginRight: 10}}/>
+                <View style ={{ justifyContent: 'center' }}>
+                    <Text style = {{fontWeight: 'bold', fontSize: 17}}>15 purchases total</Text>
+                    <Text>lorem ipsum lorem ipsum</Text>
+                </View>
+                <Icon2 name="bulb1" size={25} color={ColourPalette.purple} style={{marginLeft: 100}}/>
             </View>
         </SafeAreaView>
+        </ScrollView>
 
     );
 }
