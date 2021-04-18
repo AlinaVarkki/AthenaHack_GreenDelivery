@@ -1,11 +1,11 @@
 import React from 'react';
-import {StyleSheet, View,Text, Image} from "react-native";
+import {StyleSheet, View, Text, Image} from "react-native";
 import ColourPalette from "../ColourPalette";
 import Button from "./Button";
 
+const MenuItem = ({item, onPress}) => {
 
-
-const MenuItem = ( {item, onPress}) => {
+    console.disableYellowBox = true;
 
     const imgExists = !(item.image == null)
 
@@ -17,10 +17,9 @@ const MenuItem = ( {item, onPress}) => {
                 <Text style={styles.price}>£{item.price}</Text>
             </View>
             {imgExists ? (<View style={styles.imagePart}>
-                <Image style={styles.image} source={item.image}/>
-                {/*<Image style = {styles.image} source= {require('../Resources/food.jpg')}/>*/}
-                </View> )
-                : null }
+                    <Image style={styles.image} source={item.image}/>
+                </View>)
+                : null}
             <View style={styles.rightSide}>
                 <Button name="+" onPress={onPress}/>
             </View>
@@ -53,12 +52,12 @@ const styles = StyleSheet.create({
         color: ColourPalette.darkGreen,
         fontWeight: 'bold'
     },
-    imagePart:{
+    imagePart: {
         width: '25%',
         justifyContent: 'center',
         alignItems: 'center',
     },
-    image:{
+    image: {
         width: 70,
         height: 70,
     },
@@ -67,7 +66,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width: '10%',
     },
-
 
 });
 

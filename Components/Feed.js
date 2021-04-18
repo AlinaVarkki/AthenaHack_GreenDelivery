@@ -1,27 +1,29 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {FlatList} from 'react-native';
 import Restaurant from "./Restaurant";
 
-export default function Feed({restaurants}){
+export default function Feed({restaurants}) {
+
+    console.disableYellowBox = true;
 
     const [listings, setListings] = useState(restaurants);
 
-    const listingRender = ({ item }) => (
+    const listingRender = ({item}) => (
         <Restaurant
-            restaurant_id = {item.restaurant_id}
+            restaurant_id={item.restaurant_id}
             title={item.title}
             category={item.category}
             deliveryTime={item.deliveryTime}
             priceCategory={item.priceCategory}
             deliveryPrice={item.deliveryPrice}
-            image ={item.image}
+            image={item.image}
         />
     );
 
     return (
-        <FlatList style = {{flex: 1}} showsVerticalScrollIndicator={false}
-                  data = {listings}
-                  keyExtractor = {item => item.restaurant_id.toString()}
+        <FlatList style={{flex: 1}} showsVerticalScrollIndicator={false}
+                  data={listings}
+                  keyExtractor={item => item.restaurant_id.toString()}
                   renderItem={listingRender}
         />
     );

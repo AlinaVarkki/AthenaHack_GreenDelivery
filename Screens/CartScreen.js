@@ -15,24 +15,23 @@ import {useNavigation} from '@react-navigation/native';
 import Icon1 from "react-native-vector-icons/Ionicons";
 import ColourPalette from "../ColourPalette";
 import Icon from 'react-native-vector-icons/AntDesign';
-import Icon2 from "react-native-vector-icons/AntDesign";
 
 const CartScreen = (props) => {
 
+    console.disableYellowBox = true;
+
     const [totalQuantity, setTotalQuantity] = useState(0);
 
-    const [order,setOrder] = useState(props.route.params.order);
-    const [total,setTotal] = useState(props.route.params.total);
-    const deliveryFee = props.route.params.delivery;
-    const [totalTotal, setTotalTotal] = useState((100*total+100*deliveryFee)/100);
+    const [order, setOrder] = useState(props.route.params.order);
+    const [total, setTotal] = useState(props.route.params.total);
 
-    useEffect(()=>{
+    useEffect(() => {
         let q = 0
         for (let i = 0; i < order.length; i++) {
             q += order[i].quantity;
         }
         setTotalQuantity(q);
-    },[])
+    }, [])
 
     const navigation = useNavigation();
 
@@ -56,10 +55,9 @@ const CartScreen = (props) => {
             if (order[i].id == chosenId) {
                 order[i].quantity += value;
                 setOrder(order);
-                setTotal((100*total + 100*value*order[i].price)/100);
+                setTotal((100 * total + 100 * value * order[i].price) / 100);
                 setTotalQuantity(totalQuantity + value)
-                // setTotalTotal((100*total + 100*deliveryFee)/100);
-                return ;
+                return;
             }
         }
     };
@@ -79,10 +77,8 @@ const CartScreen = (props) => {
 
         <SafeAreaView style={styles.container}>
 
-            <TouchableOpacity  onPress = {closePage} onClick={closePage} style={styles.closeButton}>
-                {/*<View >*/}
-                    <Icon1 name='close' size={37} color= {ColourPalette.green} />
-                {/*</View>*/}
+            <TouchableOpacity onPress={closePage} onClick={closePage} style={styles.closeButton}>
+                <Icon1 name='close' size={37} color={ColourPalette.green}/>
             </TouchableOpacity>
 
             <View style={styles.top}>
@@ -99,29 +95,44 @@ const CartScreen = (props) => {
             </View>
 
             <View style={styles.paymentInfo}>
-                <View style={styles.paymentLine}><Text style={{color: ColourPalette.grey}}>Subtotal</Text><Text style={{color: ColourPalette.grey}}>£{total}</Text></View>
-                <View style={styles.paymentLine}><Text style={{color: ColourPalette.grey}}>Delivery cost</Text><Text style={{color: ColourPalette.grey}}>FREE</Text></View>
-                <View style={styles.paymentLine}><Text style={{fontWeight:'bold',color: ColourPalette.grey}}>Total</Text><Text style={{color: ColourPalette.grey}}>£{total}</Text></View>
+                <View style={styles.paymentLine}><Text style={{color: ColourPalette.grey}}>Subtotal</Text><Text
+                    style={{color: ColourPalette.grey}}>£{total}</Text></View>
+                <View style={styles.paymentLine}><Text style={{color: ColourPalette.grey}}>Delivery cost</Text><Text
+                    style={{color: ColourPalette.grey}}>FREE</Text></View>
+                <View style={styles.paymentLine}><Text
+                    style={{fontWeight: 'bold', color: ColourPalette.grey}}>Total</Text><Text
+                    style={{color: ColourPalette.grey}}>£{total}</Text></View>
 
             </View>
 
-            <View style={{flexDirection: 'row', backgroundColor: ColourPalette.lightPurple, padding: 10, borderRadius: 16, margin: 10}}>
-                <Image source={require('../Resources/zoomedContainers.jpg')} style={{height: 70, width: 70, marginRight: 10}}/>
-                <View style ={{ justifyContent: 'center', width:'75%' }}>
-                    <Text style = {{fontWeight: 'bold', fontSize: 20}}>Look at you go!</Text>
-                    <Text style={{fontSize: 15}}>This purchase prevents the waste of <Text style={{fontWeight: 'bold'}}>{totalQuantity}</Text> single-use plastic {totalQuantity == 1 ? "container" : "containers"}</Text>
+            <View style={{
+                flexDirection: 'row',
+                backgroundColor: ColourPalette.lightPurple,
+                padding: 10,
+                borderRadius: 16,
+                margin: 10
+            }}>
+                <Image source={require('../Resources/zoomedContainers.jpg')}
+                       style={{height: 70, width: 70, marginRight: 10}}/>
+                <View style={{justifyContent: 'center', width: '75%'}}>
+                    <Text style={{fontWeight: 'bold', fontSize: 20}}>Look at you go!</Text>
+                    <Text style={{fontSize: 15}}>This purchase prevents the waste of <Text
+                        style={{fontWeight: 'bold'}}>{totalQuantity}</Text> single-use
+                        plastic {totalQuantity == 1 ? "container" : "containers"}</Text>
                 </View>
-                <Icon name="bulb1" size={25} color={ColourPalette.purple} style={{position: 'absolute', right:10, top: 10}}/>
+                <Icon name="bulb1" size={25} color={ColourPalette.purple}
+                      style={{position: 'absolute', right: 10, top: 10}}/>
             </View>
 
-                <TouchableWithoutFeedback style={styles.orderButton} onPress={orderSubmitted}>
-                    <View style={styles.orderButton}>
+            <TouchableWithoutFeedback style={styles.orderButton} onPress={orderSubmitted}>
+                <View style={styles.orderButton}>
 
-                        <Text style={styles.buttonText}>{total === 0 ? "Your cart is empty." : "Order (£"+total+")" }</Text>
+                    <Text
+                        style={styles.buttonText}>{total === 0 ? "Your cart is empty." : "Order (£" + total + ")"}</Text>
 
-                    </View>
+                </View>
 
-                </TouchableWithoutFeedback>
+            </TouchableWithoutFeedback>
         </SafeAreaView>
 
     );
@@ -132,7 +143,7 @@ const {height} = Dimensions.get("screen");
 
 const styles = StyleSheet.create({
 
-    container:{
+    container: {
         padding: 20,
         paddingTop: 30,
         height: '100%',
@@ -143,7 +154,7 @@ const styles = StyleSheet.create({
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
-        paddingBottom:15,
+        paddingBottom: 15,
     },
     title: {
         fontSize: 30,
@@ -157,7 +168,7 @@ const styles = StyleSheet.create({
         padding: 5,
     },
     horizontalOptions: {
-        maxHeight: height*0.4,
+        maxHeight: height * 0.4,
     },
     paymentInfo: {
         paddingVertical: 20,
@@ -174,11 +185,11 @@ const styles = StyleSheet.create({
 
     orderButton: {
         height: '7%',
-        width:'100%',
+        width: '100%',
         backgroundColor: ColourPalette.green,
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius:7,
+        borderRadius: 7,
         position: 'absolute',
         bottom: '2%',
         left: '5%'

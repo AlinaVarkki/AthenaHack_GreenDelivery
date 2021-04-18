@@ -1,12 +1,13 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import ColourPalette from "../ColourPalette";
-import Feed from "../Components/Feed";
 import Icon from "react-native-vector-icons/Octicons";
 import {useNavigation} from '@react-navigation/native';
 import FavouritesFeed from "../Components/FavouritesFeed";
 
-export default function FeedScreen(){
+export default function FeedScreen() {
+
+    console.disableYellowBox = true;
 
     const navigation = useNavigation();
 
@@ -16,18 +17,20 @@ export default function FeedScreen(){
 
 
     return (
-        <SafeAreaView style = {styles.feedScreen} >
-            <View style = {styles.topSection}>
+        <SafeAreaView style={styles.feedScreen}>
+            <View style={styles.topSection}>
                 <TouchableOpacity onPress={openSideMenu}>
-                    <Icon style={styles.sideMenuButton} name='three-bars' size={37} color= {ColourPalette.green} />
+                    <Icon style={styles.sideMenuButton} name='three-bars' size={37} color={ColourPalette.green}/>
                 </TouchableOpacity>
                 <View style={styles.sideMenuButton}>
                 </View>
-                <View style = {styles.topLeftSection}>
-                    <Text style = {styles.locationText}>Favourites <Icon style={{paddingRight: 5,paddingTop: 10,}} name='heart' size={25} color= {ColourPalette.green} /></Text>
+                <View style={styles.topLeftSection}>
+                    <Text style={styles.locationText}>Favourites <Icon style={{paddingRight: 5, paddingTop: 10,}}
+                                                                       name='heart' size={25}
+                                                                       color={ColourPalette.green}/></Text>
                 </View>
             </View>
-            <FavouritesFeed style = {styles.feed}/>
+            <FavouritesFeed style={styles.feed}/>
         </SafeAreaView>
     );
 }
@@ -53,18 +56,17 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         paddingBottom: 10,
     },
-    topLeftSection:{
-        flex:1,
+    topLeftSection: {
+        flex: 1,
         justifyContent: 'flex-end',
         marginRight: 210,
         marginBottom: 15
     },
 
-    locationText:{
+    locationText: {
         paddingTop: 40,
         paddingRight: 5,
         fontSize: 20,
-        // fontFamily: 'Ubuntu',
         fontWeight: 'bold',
         color: ColourPalette.green,
         alignSelf: 'center'

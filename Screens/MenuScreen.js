@@ -23,12 +23,14 @@ import {useNavigation} from "@react-navigation/native";
 
 const MenuScreen = (props) => {
 
+    console.disableYellowBox = true;
+
     const navigation = useNavigation();
 
     const id = props.route.params.idR
     console.log(id)
 
-    const [restaurant,setRestaurant] = useState(
+    const [restaurant, setRestaurant] = useState(
         {
             restaurant_id: 0,
             title: 'Taco Bell',
@@ -39,7 +41,7 @@ const MenuScreen = (props) => {
             image: require('../Resources/food.jpg'),
         }
     );
-    const [menu,setMenu] = useState(RestaurantMenus.menu1);
+    const [menu, setMenu] = useState(RestaurantMenus.menu1);
 
 
     useEffect(() => {
@@ -50,13 +52,12 @@ const MenuScreen = (props) => {
         for (let i = 0; i < rests.length; i++) {
             if (rests[i].restaurant_id == id) {
                 setRestaurant(rests[i]);
-                menuName = "menu"+id;
+                menuName = "menu" + id;
                 setMenu(RestaurantMenus[menuName])
             }
         }
 
-    },[])
-
+    }, [])
 
 
     const [total, updateTotal] = useState(0.00);
@@ -64,7 +65,7 @@ const MenuScreen = (props) => {
     const [order, updateOrder] = useState([]);
     const [heartName, toggleHeartName] = useState('hearto');
 
-    const renderCategories = ({item})=> (
+    const renderCategories = ({item}) => (
         <TouchableWithoutFeedback style={styles.optionButton} onPress={() => jumpTo(item.title)}>
             <Text style={styles.option}>{item.title}</Text>
         </TouchableWithoutFeedback>
@@ -75,7 +76,7 @@ const MenuScreen = (props) => {
     }
 
     const updateCart = (item) => {
-        updateTotal((total*100 + item.price*100)/100);
+        updateTotal((total * 100 + item.price * 100) / 100);
         updateCounter(counter + 1);
         const itemID = item.id;
 
@@ -100,7 +101,7 @@ const MenuScreen = (props) => {
 
     const closePage = () => {
         console.log("closing");
-        navigation.navigate("DrawerNavigation", {screen: "Restaurants" });
+        navigation.navigate("DrawerNavigation", {screen: "Restaurants"});
     }
 
     const toggleHeart = () => {
@@ -112,77 +113,81 @@ const MenuScreen = (props) => {
     }
 
 
-    return(
+    return (
 
 
         <SafeAreaView style={styles.container}>
             <ScrollView>
-            <View style = {styles.listing}>
-                <View style = {styles.upperSection}>
+                <View style={styles.listing}>
+                    <View style={styles.upperSection}>
 
-                    <Image style = {styles.image} source={restaurant.image} />
-                    <TouchableOpacity  onPress = {closePage} onClick={closePage}>
-                        <View style={styles.closeButton}>
-                            <Icon1 name='close' size={30} color= {ColourPalette.lightPurple} />
+                        <Image style={styles.image} source={restaurant.image}/>
+                        <TouchableOpacity onPress={closePage} onClick={closePage}>
+                            <View style={styles.closeButton}>
+                                <Icon1 name='close' size={30} color={ColourPalette.lightPurple}/>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.lowerSection}>
+                        <View style={styles.lowerLeftSection}>
+                            <Text style={styles.headerText}>{restaurant.title}</Text>
+                            <View style={styles.categoryAndPriceSection}>
+                                <Text style={{color: ColourPalette.darkGreen}}>{restaurant.category}</Text>
+                                <Text style={{color: ColourPalette.darkGreen}}>{restaurant.priceCategory}</Text>
+                            </View>
                         </View>
-                    </TouchableOpacity>
-                </View>
-                <View style = {styles.lowerSection}>
-                    <View style = {styles.lowerLeftSection}>
-                        <Text style = {styles.headerText}>{restaurant.title}</Text>
-                        <View style = {styles.categoryAndPriceSection}>
-                            <Text style = {{color: ColourPalette.darkGreen}}>{restaurant.category}</Text>
-                            <Text style = {{color: ColourPalette.darkGreen}}>{restaurant.priceCategory}</Text>
+                        <View style={styles.lowerRightSection}>
+                            <Text style={{color: ColourPalette.darkGreen}}>{restaurant.deliveryTime} min</Text>
+                            <Text style={{
+                                color: ColourPalette.darkGreen,
+                                opacity: .6
+                            }}>£{restaurant.deliveryPrice} delivery</Text>
                         </View>
                     </View>
-                    <View style = {styles.lowerRightSection}>
-                        <Text style = {{color: ColourPalette.darkGreen}}>{restaurant.deliveryTime} min</Text>
-                        <Text style = {{color: ColourPalette.darkGreen, opacity: .6}}>£{restaurant.deliveryPrice} delivery</Text>
-                    </View>
                 </View>
-            </View>
-            <View style={styles.restaurantInfo}>
-                <View>
-                <Text style={{fontWeight: 'bold', fontSize: 17}}>Restaurant info </Text>
-                <Text><Icon name='enviroment' size={17} color={'black'}/> {restaurant.address}</Text>
-                </View>
-                <TouchableWithoutFeedback onPress={toggleHeart} >
-                    <View style={styles.heart}>
-                    <Icon name={heartName} color={ColourPalette.lightPurple} size={22}/>
+                <View style={styles.restaurantInfo}>
+                    <View>
+                        <Text style={{fontWeight: 'bold', fontSize: 17}}>Restaurant info </Text>
+                        <Text><Icon name='enviroment' size={17} color={'black'}/> {restaurant.address}</Text>
                     </View>
-                </TouchableWithoutFeedback>
-            </View>
-            <View style={styles.horizontalOptions}>
-                <FlatList
-                    data={menu}
-                    renderItem={renderCategories}
-                    keyExtractor={item => item.title}
-                    horizontal ={true}
-                />
-            </View>
-            <View style={styles.menu}>
-                <SectionList
-                    sections={menu}
-                    renderItem={({item}) => <MenuItem item={item} onPress={()=>updateCart(item)}/>}
-                    keyExtractor={(item, index) => index}
-                    renderSectionHeader={({ section: { title } }) => (
-                        <Text style={styles.menuHeader}>{title}</Text>
-                    )}
-                    scrollEnabled={false}
-                />
-            </View>
+                    <TouchableWithoutFeedback onPress={toggleHeart}>
+                        <View style={styles.heart}>
+                            <Icon name={heartName} color={ColourPalette.lightPurple} size={22}/>
+                        </View>
+                    </TouchableWithoutFeedback>
+                </View>
+                <View style={styles.horizontalOptions}>
+                    <FlatList
+                        data={menu}
+                        renderItem={renderCategories}
+                        keyExtractor={item => item.title}
+                        horizontal={true}
+                    />
+                </View>
+                <View style={styles.menu}>
+                    <SectionList
+                        sections={menu}
+                        renderItem={({item}) => <MenuItem item={item} onPress={() => updateCart(item)}/>}
+                        keyExtractor={(item, index) => index}
+                        renderSectionHeader={({section: {title}}) => (
+                            <Text style={styles.menuHeader}>{title}</Text>
+                        )}
+                        scrollEnabled={false}
+                    />
+                </View>
             </ScrollView>
 
-            <TouchableHighlight activeOpacity={0.6} underlayColor={ColourPalette.lightPurple} style={styles.bottomPartButton} onPress={goToCart}>
+            <TouchableHighlight activeOpacity={0.6} underlayColor={ColourPalette.lightPurple}
+                                style={styles.bottomPartButton} onPress={goToCart}>
                 <View>
-                        <Text style={styles.bottomPartText}>
-                            £{total}  •  {counter} {counter === 1 ? "Item" : "Items"}</Text>
+                    <Text style={styles.bottomPartText}>
+                        £{total} • {counter} {counter === 1 ? "Item" : "Items"}</Text>
                     <Text style={{fontSize: 12}}>
-                        <Icon name='shoppingcart' size={12} color={'black'}/>  Tap to checkout.
+                        <Icon name='shoppingcart' size={12} color={'black'}/> Tap to checkout.
                     </Text>
 
                 </View>
-                </TouchableHighlight>
+            </TouchableHighlight>
 
         </SafeAreaView>
 
@@ -195,27 +200,27 @@ const {height} = Dimensions.get("screen");
 
 const styles = StyleSheet.create({
     backButton: {
-        flex:2,
-        marginTop:40,
-        marginRight:20,
+        flex: 2,
+        marginTop: 40,
+        marginRight: 20,
         position: 'absolute',
-        top:0,
-        right:0
+        top: 0,
+        right: 0
     },
     container: {
         width: '100%',
         height: height,
     },
     listing: {
-        flex:1,
+        flex: 1,
         backgroundColor: '#fff',
         overflow: 'hidden',
         width: '100%',
         elevation: 0.5,
-        minHeight: height*0.33,
+        minHeight: height * 0.33,
     },
     restaurantInfo: {
-        height: height*0.08,
+        height: height * 0.08,
         backgroundColor: ColourPalette.lightPurple,
         // opacity: 0.5,
         // justifyContent: 'center',
@@ -239,7 +244,7 @@ const styles = StyleSheet.create({
         borderRadius: 30,
     },
     horizontalOptions: {
-        height: height*0.08,
+        height: height * 0.08,
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -251,7 +256,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    option:{
+    option: {
         color: 'white',
         fontSize: 15,
         paddingVertical: 10,
@@ -270,7 +275,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         // backgroundColor: ColourPalette.grey,
     },
-    menuHeader:{
+    menuHeader: {
         fontSize: 23,
         fontWeight: 'bold',
         padding: 5,
@@ -310,8 +315,8 @@ const styles = StyleSheet.create({
         color: 'black',
         fontWeight: 'bold',
     },
-    bottomPartButton:{
-        height: height*0.16,
+    bottomPartButton: {
+        height: height * 0.16,
         borderTopWidth: 1.5,
         borderColor: ColourPalette.purple,
         backgroundColor: ColourPalette.lightPurple,
@@ -319,7 +324,7 @@ const styles = StyleSheet.create({
         elevation: 0.5,
     },
     bottomPartText: {
-        fontSize:15,
+        fontSize: 15,
         // height: height*0.14,
         justifyContent: 'center',
         paddingTop: 13,

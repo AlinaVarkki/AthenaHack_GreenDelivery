@@ -5,7 +5,10 @@ import {StyleSheet, View} from 'react-native';
 import {useNavigation} from "@react-navigation/native";
 import ColourPalette from "../ColourPalette";
 
-export default function SlideScreen(){
+export default function SlideScreen() {
+
+    console.disableYellowBox = true;
+
     const navigation = useNavigation();
     const images = [require('../Images/Carousel/Carousel1.png'),
         require('../Images/Carousel/Carousel2.png'),
@@ -14,16 +17,18 @@ export default function SlideScreen(){
         require('../Images/Carousel/Carousel5.png')];
 
     const style = StyleSheet.create({
-        slide:{
+        slide: {
             width: '100%',
             height: '100%',
             backgroundColor: ColourPalette.green
         }
     })
 
-    return(
+    return (
         <View style={style.slide}>
-            <SliderBox style={style.slide} images={images} resizeMode={'stretch'} onCurrentImagePressed={() => navigation.navigate("DrawerNavigation", {screen: "Restaurants" }) } autoplay circleLoop/>
+            <SliderBox style={style.slide} images={images} resizeMode={'stretch'}
+                       onCurrentImagePressed={() => navigation.navigate("DrawerNavigation", {screen: "Restaurants"})}
+                       autoplay circleLoop/>
         </View>
     )
 }

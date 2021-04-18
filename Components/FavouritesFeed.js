@@ -1,9 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {FlatList} from 'react-native';
-import Restaurant from "./Restaurant";
 import FavouritesRestaurant from "./FavouritesRestaurant";
 
-export default function Feed(){
+export default function Feed() {
+
+    console.disableYellowBox = true;
 
     const [listings, setListings] = useState([
         {
@@ -16,7 +17,7 @@ export default function Feed(){
             logo: require('../Resources/Logos/starbucks.png'),
             address: '9 Exchange Pl, Glasgow G1 3AN'
 
-        },{
+        }, {
             restaurant_id: 3,
             title: 'Picnic',                //soup
             category: 'Soups • Vegan',
@@ -29,23 +30,23 @@ export default function Feed(){
         },
     ]);
 
-    const listingRender = ({ item }) => (
+    const listingRender = ({item}) => (
         <FavouritesRestaurant
-            restaurant_id = {item.restaurant_id}
+            restaurant_id={item.restaurant_id}
             title={item.title}
             category={item.category}
             deliveryTime={item.deliveryTime}
             priceCategory={item.priceCategory}
             deliveryPrice={item.deliveryPrice}
-            image ={item.image}
+            image={item.image}
             logo={item.logo}
         />
     );
 
     return (
-        <FlatList style = {{flex: 1}} showsVerticalScrollIndicator={false}
-                  data = {listings}
-                  keyExtractor = {item => item.restaurant_id.toString()}
+        <FlatList style={{flex: 1}} showsVerticalScrollIndicator={false}
+                  data={listings}
+                  keyExtractor={item => item.restaurant_id.toString()}
                   renderItem={listingRender}
         />
     );

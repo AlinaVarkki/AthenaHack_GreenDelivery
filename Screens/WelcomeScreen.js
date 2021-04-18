@@ -13,7 +13,7 @@ const WelcomeScreen = () => {
     };
 
     const finalT = () => {
-        setTimeout(navCheck,1500);
+        setTimeout(navCheck, 1500);
     }
 
     return (
@@ -26,15 +26,13 @@ const WelcomeScreen = () => {
             <Text style={styles.biggerText}>Your GREEN{"\n"}Delivery</Text>
 
 
-
         </SafeAreaView>
     )
 
 }
 
 const {height, width} = Dimensions.get("screen");
-const picHeight = height*0.2;
-
+const picHeight = height * 0.2;
 
 
 const styles = StyleSheet.create({
@@ -42,16 +40,16 @@ const styles = StyleSheet.create({
         backgroundColor: ColourPalette.otherPurple,
         width: '100%',
         height: height,
-        flex:1,
+        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
     },
     image: {
         // height: picHeight,
-        width: width*0.6,
-        height: width*0.6,
+        width: width * 0.6,
+        height: width * 0.6,
         position: 'absolute',
-        top: height*0.2,
+        top: height * 0.2,
 
     },
     smallerText: {
@@ -63,11 +61,11 @@ const styles = StyleSheet.create({
         // fontFamily: 'Ubuntu',
         letterSpacing: 1.5,
         position: 'absolute',
-        top: height*0.52,
+        top: height * 0.52,
 
         left: 20,
     },
-    biggerText:{
+    biggerText: {
         color: ColourPalette.green,
         fontWeight: 'bold',
         fontSize: 45,
@@ -75,7 +73,7 @@ const styles = StyleSheet.create({
         letterSpacing: 3,
         paddingTop: 5,
         position: 'absolute',
-        top: height*0.61,
+        top: height * 0.61,
 
         left: 20,
 

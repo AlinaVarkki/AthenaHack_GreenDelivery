@@ -1,14 +1,11 @@
 import React from 'react';
 import {Image, StyleSheet, Text, TouchableWithoutFeedback, View} from 'react-native';
-import Icon from 'react-native-vector-icons/EvilIcons';
 import ColourPalette from "../ColourPalette";
 import {useNavigation} from "@react-navigation/native";
 
-import RestaurantMenus from "../Resources/RestaurantMenus";
-
 function FavouritesRestaurant({restaurant_id, title, category, image, deliveryTime, priceCategory, deliveryPrice, timeMeasurement, logo}){
 
-
+    console.disableYellowBox = true;
 
     const navigation = useNavigation();
 

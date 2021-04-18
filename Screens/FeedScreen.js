@@ -6,8 +6,10 @@ import Icon from "react-native-vector-icons/Octicons";
 import {useNavigation} from '@react-navigation/native';
 
 import RestList from "../Resources/RestaurantsList";
-export default function FeedScreen(){
 
+export default function FeedScreen() {
+
+    console.disableYellowBox = true;
 
     const navigation = useNavigation();
 
@@ -15,21 +17,20 @@ export default function FeedScreen(){
         navigation.openDrawer();
     };
 
-
     return (
-        <SafeAreaView style = {styles.feedScreen} >
-            <View style = {styles.topSection}>
+        <SafeAreaView style={styles.feedScreen}>
+            <View style={styles.topSection}>
                 <TouchableOpacity onPress={openSideMenu}>
-                    <Icon style={styles.sideMenuButton} name='three-bars' size={37} color= {ColourPalette.green} />
+                    <Icon style={styles.sideMenuButton} name='three-bars' size={37} color={ColourPalette.green}/>
                 </TouchableOpacity>
                 <View style={styles.sideMenuButton}>
                 </View>
-                <View style = {styles.topLeftSection}>
-                    <Text style = {styles.text}>Your GREEN delivery</Text>
-                    <Text style = {styles.locationText}>GL 1QL, Glasgow</Text>
+                <View style={styles.topLeftSection}>
+                    <Text style={styles.text}>Your GREEN delivery</Text>
+                    <Text style={styles.locationText}>GL 1QL, Glasgow</Text>
                 </View>
             </View>
-            <Feed style = {styles.feed} restaurants = {RestList.restaurantsList}/>
+            <Feed style={styles.feed} restaurants={RestList.restaurantsList}/>
         </SafeAreaView>
     );
 }
@@ -55,25 +56,23 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         paddingBottom: 10,
     },
-    topLeftSection:{
-        flex:1,
+    topLeftSection: {
+        flex: 1,
         justifyContent: 'center',
     },
 
-    locationText:{
+    locationText: {
         fontSize: 26.5,
-        // fontFamily: 'Ubuntu',
         fontWeight: 'bold',
         color: ColourPalette.purple,
         alignSelf: 'flex-end'
     },
-    text:{
+    text: {
         fontSize: 16.5,
-        // fontFamily: 'Ubuntu',
         color: ColourPalette.green,
         alignSelf: 'flex-end'
     },
-    bottomSection:{
+    bottomSection: {
         paddingTop: 10,
         alignItems: 'center',
         height: '8%',

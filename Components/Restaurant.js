@@ -1,38 +1,35 @@
 import React from 'react';
 import {Image, StyleSheet, Text, TouchableWithoutFeedback, View} from 'react-native';
-import Icon from 'react-native-vector-icons/EvilIcons';
 import ColourPalette from "../ColourPalette";
 import {useNavigation} from "@react-navigation/native";
 
-import RestaurantMenus from "../Resources/RestaurantMenus";
+function Restaurant({restaurant_id, title, category, image, deliveryTime, priceCategory, deliveryPrice, timeMeasurement}) {
 
-function Restaurant({restaurant_id, title, category, image, deliveryTime, priceCategory, deliveryPrice, timeMeasurement}){
-
-
+    console.disableYellowBox = true;
 
     const navigation = useNavigation();
 
-    function seeListing(){
+    function seeListing() {
         navigation.navigate('MenuScreen', {idR: restaurant_id})
     }
 
     return (
-        <TouchableWithoutFeedback onPress = {seeListing}>
-            <View style = {styles.listing}>
-                <View style = {styles.upperSection}>
-                    <Image style = {styles.image} source={image} />
+        <TouchableWithoutFeedback onPress={seeListing}>
+            <View style={styles.listing}>
+                <View style={styles.upperSection}>
+                    <Image style={styles.image} source={image}/>
                 </View>
-                <View style = {styles.lowerSection}>
-                    <View style = {styles.lowerLeftSection}>
-                        <Text style = {styles.headerText}>{title}</Text>
-                        <View style = {styles.categoryAndPriceSection}>
-                            <Text style = {{color: ColourPalette.darkGreen}}>{category}</Text>
-                            <Text style = {{color: ColourPalette.darkGreen}}>{priceCategory}</Text>
+                <View style={styles.lowerSection}>
+                    <View style={styles.lowerLeftSection}>
+                        <Text style={styles.headerText}>{title}</Text>
+                        <View style={styles.categoryAndPriceSection}>
+                            <Text style={{color: ColourPalette.darkGreen}}>{category}</Text>
+                            <Text style={{color: ColourPalette.darkGreen}}>{priceCategory}</Text>
                         </View>
                     </View>
-                    <View style = {styles.lowerRightSection}>
-                        <Text style = {{color: ColourPalette.darkGreen}}>{deliveryTime} {timeMeasurement} min</Text>
-                        <Text style = {{color: ColourPalette.darkGreen, opacity: .6}}>{deliveryPrice} delivery</Text>
+                    <View style={styles.lowerRightSection}>
+                        <Text style={{color: ColourPalette.darkGreen}}>{deliveryTime} {timeMeasurement} min</Text>
+                        <Text style={{color: ColourPalette.darkGreen, opacity: .6}}>{deliveryPrice} delivery</Text>
                     </View>
                 </View>
             </View>
@@ -42,7 +39,7 @@ function Restaurant({restaurant_id, title, category, image, deliveryTime, priceC
 
 const styles = StyleSheet.create({
     listing: {
-        flex:1,
+        flex: 1,
         borderRadius: 10,
         backgroundColor: '#fff',
         marginBottom: 20,
