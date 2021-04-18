@@ -28,18 +28,18 @@ const ImpactScreen = () => {
 
                 <View style={{flex: 1, marginLeft: 19}}>
                     <View style={{flexDirection: 'row'}}>
-                        <Text style={{fontSize: 70, fontWeight: 'bold', color: "#36383d"}}>12</Text>
+                        <Text style={{fontSize: 70, fontWeight: 'bold', color: "#36383d"}}>45,3</Text>
                         <Text style={{
                             fontSize: 50,
                             fontWeight: 'bold',
                             color: "#36383d",
                             alignSelf: "flex-end",
                             marginBottom: 4
-                        }}>%</Text>
+                        }}> kg</Text>
                     </View>
-                    <Text style={{marginLeft: 5, fontSize: 17}}>less CO2 emissions</Text>
+                    <Text style={{marginLeft: 5, fontSize: 16.5}}>CO2 emissions prevented</Text>
 
-                    <View style={{flexDirection: 'row', marginTop: 13}}>
+                    <View style={{flexDirection: 'row', marginTop: 17}}>
                         <Icon1 style={{alignSelf: "center", marginRight: 10}} name='plus' size={26}
                                color={ColourPalette.purple}/>
                         <View>
@@ -49,8 +49,9 @@ const ImpactScreen = () => {
                                 color: "#36383d",
                                 margin: -5,
                                 marginLeft: 1.5
-                            }}>20</Text>
-                            <Text>turtles saved</Text>
+                            }}>243</Text>
+                            <Text>containers</Text>
+                            <Text>prevented</Text>
                         </View>
                     </View>
 
@@ -64,8 +65,9 @@ const ImpactScreen = () => {
                                 color: "#36383d",
                                 margin: -5,
                                 marginLeft: 1.5
-                            }}>20</Text>
-                            <Text>turtles saved</Text>
+                            }}>38</Text>
+                            <Text>patrol rides</Text>
+                            <Text>prevented</Text>
                         </View>
                     </View>
 
@@ -79,8 +81,10 @@ const ImpactScreen = () => {
                                 color: "#36383d",
                                 margin: -5,
                                 marginLeft: 1.5
-                            }}>20</Text>
-                            <Text>turtles saved</Text>
+                            }}>30</Text>
+                            <Text>containers</Text>
+                            <Text>not in the</Text>
+                            <Text>ocean</Text>
                         </View>
                     </View>
 
@@ -106,7 +110,9 @@ const ImpactScreen = () => {
 
             </View>
 
-            <Image style = {{width: 325, height:325, marginLeft: 131, marginTop: -163}} source={{uri: 'https://media.giphy.com/media/Xlrd0dWPniCXxIoG2V/giphy.gif'}}/>
+            <Image style = {{width: 325, height:325, marginLeft: 131, marginTop: -233}} source={{uri: 'https://media.giphy.com/media/Xlrd0dWPniCXxIoG2V/giphy.gif'}}/>
+
+            <Image style = {{height: 36, width:156, alignSelf: "flex-start", marginBottom: 10, marginLeft: 5}} source={require('../Images/social.png')}/>
 
             <View style={{flexDirection: 'row', backgroundColor: "#f0f1fa", padding: 10, borderRadius: 16, margin: 10}}>
                 <Image source={require('../Resources/zoomedContainers.jpg')} style={{height: 70, width: 70, marginRight: 10}}/>
@@ -134,6 +140,7 @@ const ImpactScreen = () => {
                 </View>
                 <Icon2 name="bulb1" size={25} color={ColourPalette.purple} style={{marginLeft: 100}}/>
             </View>
+
         </SafeAreaView>
         </ScrollView>
 
