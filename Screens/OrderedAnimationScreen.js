@@ -18,7 +18,7 @@ const OrderedAnimationScreen  = () => {
     }
 
     const fadeIn = () => {
-        setTimeout(navCheck,700);
+        setTimeout(navCheck,950);
     };
 
     return (
@@ -28,7 +28,8 @@ const OrderedAnimationScreen  = () => {
                     uri: 'https://media.giphy.com/media/ZnpYDtX0MENdkKpQGK/giphy.gif'
                 }} onLoad={finalT}/>
             </View>
-            <Text style={{fontSize: 30, color: ColourPalette.green, margin: 50, alignSelf: 'center', fontWeight: "bold"}}>Thank you for choosing the GREEN way!</Text>
+                <Text style={{fontSize: 30, color: ColourPalette.green, margin: 50, alignSelf: 'center', fontWeight: "bold", }}>Thank you for choosing the GREEN way!</Text>
+
         </SafeAreaView>
     );
 }
