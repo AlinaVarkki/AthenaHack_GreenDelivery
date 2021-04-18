@@ -9,7 +9,7 @@ const WelcomeScreen = () => {
     const navigation = useNavigation();
 
     const navCheck = () => {
-        navigation.navigate("DrawerNavigation", {screen: "Restaurants" });
+        navigation.navigate("SlideScreen");
     };
 
     const finalT = () => {
