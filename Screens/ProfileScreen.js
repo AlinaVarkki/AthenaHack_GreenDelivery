@@ -23,7 +23,13 @@ const ProfileScreen = () => {
                 </View>
             </TouchableOpacity>
 
-            <Image style = {{alignSelf: "center", height: 150, width:150, marginBottom: 50}} source={require('../Images/profilePhoto.jpg')}/>
+            <Image style = {{alignSelf: "center", height: 150, width:150}} source={require('../Images/profilePhoto.jpg')}/>
+
+            <View style={{width: '100%', alignItems:'center',  marginBottom: 30}}>
+                <View style={{flexDirection: 'row',backgroundColor: "#a8fadf", justifyContent: "center", borderRadius:25, paddingVertical: 7, paddingHorizontal: 9}}>
+                    <Text style={{alignSelf: "center", justifyContent: 'center', color: 'black', fontWeight: 'bold', letterSpacing: 1, fontSize: 15}}><Icon name="star" size={17}/> PREMIUM</Text>
+                </View>
+            </View>
 
             <View style = {{flexDirection: 'row', alignItems: "center", justifyContent: "space-between", backgroundColor: '#f4f5fa', borderRadius: 15, height: 70, paddingLeft: 15, margin:10}}>
                 <View>
