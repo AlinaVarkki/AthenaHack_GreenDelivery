@@ -16,9 +16,6 @@ import Icon1 from "react-native-vector-icons/Ionicons";
 import ColourPalette from "../ColourPalette";
 import Icon from 'react-native-vector-icons/AntDesign';
 
-
-
-
 const CartScreen = (props) => {
 
     const [order,setOrder] = useState(props.route.params.order);
@@ -62,8 +59,7 @@ const CartScreen = (props) => {
     }
 
     const orderSubmitted = () => {
-        console.log("submitting");
-
+        navigation.navigate("OrderedAnimationScreen");
     }
 
     return (

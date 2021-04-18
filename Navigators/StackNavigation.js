@@ -8,6 +8,7 @@ import MenuScreen from "../Screens/MenuScreen";
 
 import RestaurantMenus from "../Resources/RestaurantMenus";
 import FeedScreen from "../Screens/FeedScreen";
+import OrderedAnimationScreen from "../Screens/OrderedAnimationScreen";
 
 const Stack = createStackNavigator();
 
@@ -19,6 +20,7 @@ const StackNavigation  = () => (
             <Stack.Screen name="DrawerNavigation" component={DrawerNavigation}/>
             <Stack.Screen name="MenuScreen" component={MenuScreen} initialParams={{idR: 0}}/>
             <Stack.Screen name="CartScreen" component={CartScreen}/>
+            <Stack.Screen name="OrderedAnimationScreen" component={OrderedAnimationScreen}/>
         </Stack.Navigator>
 
     </NavigationContainer>

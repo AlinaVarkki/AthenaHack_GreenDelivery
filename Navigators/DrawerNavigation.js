@@ -39,13 +39,13 @@ const DrawerNavigation = () => {
                 drawerIcon: () => (
                     <Icon3 style={{marginLeft: 30, marginRight: -20}} name='recycle' size={30} color={'white'}/>)
             }}/>
-            <Drawer.Screen name="Profile" component={ProfileScreen} options={{
-                drawerIcon: () => (
-                    <Icon style={{marginLeft: 30, marginRight: -20}} name='person-outline' size={30} color={'white'}/>)
-            }}/>
             <Drawer.Screen name="Restaurants" component={FeedScreen} options={{
                 drawerIcon: () => (<Icon style={{marginLeft: 30, marginRight: -20}} name='restaurant-outline' size={30}
                                          color={'white'}/>)
+            }}/>
+            <Drawer.Screen name="Profile" component={ProfileScreen} options={{
+                drawerIcon: () => (
+                    <Icon style={{marginLeft: 30, marginRight: -20}} name='person-outline' size={30} color={'white'}/>)
             }}/>
             <Drawer.Screen name="Favourites" component={FavouritesScreen} options={{
                 drawerIcon: () => (<Icon2 style={{marginLeft: 30, marginRight: -20}} name='favorite-outline' size={30}

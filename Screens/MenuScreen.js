@@ -231,8 +231,8 @@ const styles = StyleSheet.create({
         marginRight: 5,
     },
     closeButton: {
-        marginTop: 25,
-        marginLeft: 10,
+        marginTop: 38,
+        marginLeft: 15,
         padding: 5,
         alignSelf: 'flex-start',
         backgroundColor: ColourPalette.purple,
