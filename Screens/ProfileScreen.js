@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, TouchableOpacity, View, Image, ImageBackground, Text} from 'react-native';
+import {SafeAreaView, StyleSheet, TouchableOpacity, View, Image, ImageBackground, Text, ScrollView} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import ColourPalette from "../ColourPalette";
 import Icon from "react-native-vector-icons/Octicons";
@@ -14,6 +14,7 @@ const ProfileScreen = () => {
     };
 
     return (
+        <ScrollView>
         <SafeAreaView style = {{paddingTop: 50, backgroundColor: 'white', height: '100%'}}>
 
 
@@ -89,9 +90,10 @@ const ProfileScreen = () => {
                 </View>
             </View>
 
-            <Image style = {{height: 26, width:126, alignSelf: "flex-end", marginBottom: 5, marginRight: 5}} source={require('../Images/social.png')}/>
+            <Image style = {{height: 40, width:176, alignSelf: "flex-end", marginBottom: 5, marginRight: 5, marginTop:10}} source={require('../Images/social.png')}/>
         </SafeAreaView>
 
+        </ScrollView>
     );
 }
 
