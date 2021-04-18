@@ -13,30 +13,33 @@ const WelcomeScreen = () => {
     };
 
     const finalT = () => {
-        setTimeout(navCheck,1000);
+        setTimeout(navCheck,1500);
     }
 
     return (
         <SafeAreaView style={styles.background}>
 
-            <Image style={styles.image} source={require("../Images/logo.png")} onLoad={finalT}/>
+            <Image style={styles.image} source={require("../Images/blacksquareboii.png")} onLoad={finalT}/>
 
             <Text style={styles.smallerText}>Delicious Food{"\n"}Recyclable Packaging </Text>
 
             <Text style={styles.biggerText}>Your GREEN{"\n"}Delivery</Text>
+
+
 
         </SafeAreaView>
     )
 
 }
 
-const {height} = Dimensions.get("screen");
+const {height, width} = Dimensions.get("screen");
 const picHeight = height*0.2;
+
 
 
 const styles = StyleSheet.create({
     background: {
-        backgroundColor: ColourPalette.purple,
+        backgroundColor: ColourPalette.otherPurple,
         width: '100%',
         height: height,
         flex:1,
@@ -44,12 +47,15 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     image: {
-        height: picHeight,
+        // height: picHeight,
+        width: width*0.6,
+        height: width*0.6,
         position: 'absolute',
-        top: height*0.21,
+        top: height*0.2,
+
     },
     smallerText: {
-        color: 'white',
+        color: ColourPalette.green,
         paddingLeft: 3,
         paddingTop: 2,
         fontWeight: 'normal',
@@ -58,10 +64,11 @@ const styles = StyleSheet.create({
         letterSpacing: 1.5,
         position: 'absolute',
         top: height*0.52,
+
         left: 20,
     },
     biggerText:{
-        color: 'white',
+        color: ColourPalette.green,
         fontWeight: 'bold',
         fontSize: 45,
         // fontFamily: 'Ubuntu',
@@ -69,6 +76,7 @@ const styles = StyleSheet.create({
         paddingTop: 5,
         position: 'absolute',
         top: height*0.61,
+
         left: 20,
 
     },
