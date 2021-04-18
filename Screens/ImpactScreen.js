@@ -112,7 +112,7 @@ const ImpactScreen = () => {
 
             <Image style = {{width: 325, height:325, marginLeft: 131, marginTop: -233}} source={{uri: 'https://media.giphy.com/media/Xlrd0dWPniCXxIoG2V/giphy.gif'}}/>
 
-            <Image style = {{height: 36, width:156, alignSelf: "flex-start", marginBottom: 10, marginLeft: 5}} source={require('../Images/social.png')}/>
+            <Image style = {{height: 40, width:176, alignSelf: "flex-start", marginBottom: 10, marginLeft: 5}} source={require('../Images/social.png')}/>
 
             <TouchableOpacity onPress={() => Linking.openURL('https://www.wm.com/us/en/recycle-right/recycling-101')}>
                 <View style={{flexDirection: 'row', backgroundColor: "#f0f1fa", padding: 10, borderRadius: 16, margin: 10}}  >
@@ -136,12 +136,12 @@ const ImpactScreen = () => {
                 </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => Linking.openURL('https://www.thefabuloustimes.com/green-ways-to-travel-around-london/')}>
+            <TouchableOpacity onPress={() => Linking.openURL('https://www.wessexwater.co.uk/community/blog/14-ways-to-live-a-more-sustainable-lifestyle')}>
                 <View style={{flexDirection: 'row', backgroundColor: "#f0f1fa", padding: 10, borderRadius: 16, margin: 10}}  >
                     <Image source={require('../Resources/zoomedContainers.jpg')} style={{height: 70, width: 70, marginRight: 10}}/>
                     <View style ={{ justifyContent: 'center' }}>
-                        <Text   style = {{fontWeight: 'bold', fontSize: 17}}>Green travelling</Text>
-                        <Text>Click to see green ways get around London</Text>
+                        <Text   style = {{fontWeight: 'bold', fontSize: 17}}>Sustainable lifestyle</Text>
+                        <Text>Click to see the ways you can contibute</Text>
                     </View>
                     <Icon2 name="bulb1" size={25} color={ColourPalette.purple} style={{marginLeft: 100}}/>
                 </View>
