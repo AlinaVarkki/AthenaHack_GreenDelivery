@@ -33,7 +33,7 @@ function FavouritesRestaurant({restaurant_id, title, category, image, deliveryTi
                     <Image style = {{width: 65, height: 65, marginTop: -27, marginLeft: -25}} source={logo}/>
                     <View style = {styles.lowerRightSection}>
                         <Text style = {{color: ColourPalette.darkGreen}}>{deliveryTime} {timeMeasurement} min</Text>
-                        <Text style = {{color: ColourPalette.darkGreen, opacity: .6}}>£{deliveryPrice} delivery</Text>
+                        <Text style = {{color: ColourPalette.darkGreen, opacity: .6}}>{deliveryPrice} delivery</Text>
                     </View>
                 </View>
             </View>

@@ -32,7 +32,7 @@ function Restaurant({restaurant_id, title, category, image, deliveryTime, priceC
                     </View>
                     <View style = {styles.lowerRightSection}>
                         <Text style = {{color: ColourPalette.darkGreen}}>{deliveryTime} {timeMeasurement} min</Text>
-                        <Text style = {{color: ColourPalette.darkGreen, opacity: .6}}>£{deliveryPrice} delivery</Text>
+                        <Text style = {{color: ColourPalette.darkGreen, opacity: .6}}>{deliveryPrice} delivery</Text>
                     </View>
                 </View>
             </View>

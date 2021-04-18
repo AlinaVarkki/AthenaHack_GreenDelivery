@@ -8,7 +8,7 @@ export default class RestList{
             category: 'Italian • Pizza',
             deliveryTime: "20 - 25",
             priceCategory: "£",
-            deliveryPrice: 2,
+            deliveryPrice: 'FREE',
             image: require('../Images/CoverPhotos/paesano.png'),
             address: '94 Miller St, Glasgow G1 1DT'
         },
@@ -18,7 +18,7 @@ export default class RestList{
             category: 'Asian • Curry',
             deliveryTime: "30 - 35",
             priceCategory: "£££",
-            deliveryPrice: 3,
+            deliveryPrice: 'FREE',
             image: require('../Images/CoverPhotos/wagamama.png'),
             address: '97 W George St, Glasgow G2 1PB'
 
@@ -28,7 +28,7 @@ export default class RestList{
             category: 'Coffee • Cakes',
             deliveryTime: "10 - 15",
             priceCategory: "£",
-            deliveryPrice: 2,
+            deliveryPrice: 'FREE',
             image: require('../Images/CoverPhotos/starbucks.png'),
             address: '9 Exchange Pl, Glasgow G1 3AN'
 
@@ -38,7 +38,7 @@ export default class RestList{
             category: 'Soups • Vegan',
             deliveryTime: '5 - 10',
             priceCategory: "££",
-            deliveryPrice: 3.50,
+            deliveryPrice: 'FREE',
             image: require('../Images/CoverPhotos/picnic.png'),
             address: '103 Ingram St, Glasgow G1 1DX'
 
@@ -48,7 +48,7 @@ export default class RestList{
             category: 'Indian • Traditional',
             deliveryTime: '15 - 20',
             priceCategory: "£££",
-            deliveryPrice: 4,
+            deliveryPrice: 'FREE',
             image: require('../Images/CoverPhotos/indian.png'),
             address: '25 High St, Glasgow G1 1LX'
 
@@ -58,7 +58,7 @@ export default class RestList{
             category: 'Asian • Sushi',
             deliveryTime: '25 - 30',
             priceCategory: "££",
-            deliveryPrice: 2.5,
+            deliveryPrice: 'FREE',
             image: require('../Images/CoverPhotos/sushi.png'),
             address: '85 W George St, Glasgow G2 1QG'
 
@@ -69,8 +69,8 @@ export default class RestList{
             category: 'Pancakes • Brunch',
             deliveryTime: '30 - 35',
             priceCategory: "£££",
-            deliveryPrice: 3,
-            image: require('../Resources/food.jpg'),
+            deliveryPrice: 'FREE',
+            image: require('../Images/CoverPhotos/pancakes.png'),
             address: '100 West George St, Glasgow, G2 1PJ'
 
         },
@@ -81,7 +81,7 @@ export default class RestList{
             deliveryTime: '40 - 45',
             priceCategory: "££",
             deliveryPrice: 1.5,
-            image: require('../Resources/food.jpg'),
+            image: require('../Images/CoverPhotos/burgers.png'),
             address: '65 St Vincent St, Glasgow G2 5'
         },
     ]

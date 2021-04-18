@@ -7,23 +7,26 @@ export default function Feed(){
 
     const [listings, setListings] = useState([
         {
-            restaurant_id: 1,
-            title: 'Taco Bell',
-            category: 'Mexican • Burrito',
-            deliveryTime: "20 - 25",
-
-            deliveryPrice: 2,
-            image : require('../Resources/food.jpg'),
-            logo: require('../Resources/Logos/starbucks.png')
-        },{
             restaurant_id: 2,
-            title: 'Paesano',
-            category: 'Italian • Pizza',
-            deliveryTime: "30 - 35",
-            deliveryPrice: 4,
-            image : require('../Resources/food.jpg'),
-            logo: require('../Resources/Logos/picnic.png')
-        }
+            title: 'Starbucks',     //cafe
+            category: 'Coffee • Cakes',
+            deliveryTime: "10 - 15",
+            deliveryPrice: 'FREE',
+            image: require('../Images/CoverPhotos/starbucks.png'),
+            logo: require('../Resources/Logos/starbucks.png'),
+            address: '9 Exchange Pl, Glasgow G1 3AN'
+
+        },{
+            restaurant_id: 3,
+            title: 'Picnic',                //soup
+            category: 'Soups • Vegan',
+            deliveryTime: '5 - 10',
+            deliveryPrice: 'FREE',
+            image: require('../Images/CoverPhotos/picnic.png'),
+            logo: require('../Resources/Logos/picnic.png'),
+            address: '103 Ingram St, Glasgow G1 1DX'
+
+        },
     ]);
 
     const listingRender = ({ item }) => (
