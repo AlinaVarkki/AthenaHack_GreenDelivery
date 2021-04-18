@@ -68,17 +68,17 @@ const ProfileScreen = () => {
 
             <View style = {{flexDirection: 'row'}}>
                 <View style = {{margin: 15, alignItems: "center"}}>
-                    <Text style = {{fontSize: 12, color: ColourPalette.purple}}>Plastic savour</Text>
+                    <Text style = {{fontSize: 12, color: ColourPalette.purple}}>Pollution preventor</Text>
                     <Image style = {{width: 60, height:60, marginTop: 10}} source={{uri: 'https://media.giphy.com/media/YSy0VKlpfBTuzHqCmm/giphy.gif'}}/>
                 </View>
 
                 <View style = {{margin: 15, alignItems: "center"}}>
-                    <Text style = {{fontSize: 12, color: ColourPalette.purple}}>Plastic savour</Text>
+                    <Text style = {{fontSize: 12, color: ColourPalette.purple}}>Ocean saviour</Text>
                     <Image style = {{width: 60, height:60, marginTop: 10}} source={{uri: 'https://media.giphy.com/media/uzGim6eK3DJF5knYWl/giphy.gif'}}/>
                 </View>
 
                 <View style = {{margin: 15, alignItems: "center"}}>
-                    <Text style = {{fontSize: 12, color: ColourPalette.purple}}>Plastic savour</Text>
+                    <Text style = {{fontSize: 12, color: ColourPalette.purple}}>Planet friend</Text>
                     <Image style = {{width: 60, height:60, marginTop: 10}} source={{uri: 'https://media.giphy.com/media/q9YPRe3JsTnmj3Jo1u/giphy.gif'}}/>
                 </View>
             </View>

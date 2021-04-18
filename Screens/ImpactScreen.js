@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, TouchableOpacity, View, Image, Text} from 'react-native';
+import {SafeAreaView, StyleSheet, TouchableOpacity, View, Image, Text, Linking} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import ColourPalette from "../ColourPalette";
 import Icon from "react-native-vector-icons/Octicons";
@@ -114,10 +114,10 @@ const ImpactScreen = () => {
 
             <Image style = {{height: 36, width:156, alignSelf: "flex-start", marginBottom: 10, marginLeft: 5}} source={require('../Images/social.png')}/>
 
-            <View style={{flexDirection: 'row', backgroundColor: "#f0f1fa", padding: 10, borderRadius: 16, margin: 10}}>
+            <View style={{flexDirection: 'row', backgroundColor: "#f0f1fa", padding: 10, borderRadius: 16, margin: 10}} onPress={() => Linking.openURL('http://google.com')} >
                 <Image source={require('../Resources/zoomedContainers.jpg')} style={{height: 70, width: 70, marginRight: 10}}/>
                 <View style ={{ justifyContent: 'center' }}>
-                    <Text style = {{fontWeight: 'bold', fontSize: 17}}>15 purchases total</Text>
+                    <Text  style = {{fontWeight: 'bold', fontSize: 17}}>15 purchases total</Text>
                     <Text>lorem ipsum lorem ipsum</Text>
                 </View>
                 <Icon2 name="bulb1" size={25} color={ColourPalette.purple} style={{marginLeft: 100}}/>
