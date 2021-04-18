@@ -15,13 +15,24 @@ import {useNavigation} from '@react-navigation/native';
 import Icon1 from "react-native-vector-icons/Ionicons";
 import ColourPalette from "../ColourPalette";
 import Icon from 'react-native-vector-icons/AntDesign';
+import Icon2 from "react-native-vector-icons/AntDesign";
 
 const CartScreen = (props) => {
+
+    const [totalQuantity, setTotalQuantity] = useState(0);
 
     const [order,setOrder] = useState(props.route.params.order);
     const [total,setTotal] = useState(props.route.params.total);
     const deliveryFee = props.route.params.delivery;
     const [totalTotal, setTotalTotal] = useState((100*total+100*deliveryFee)/100);
+
+    useEffect(()=>{
+        let q = 0
+        for (let i = 0; i < order.length; i++) {
+            q += order[i].quantity;
+        }
+        setTotalQuantity(q);
+    },[])
 
     const navigation = useNavigation();
 
@@ -36,8 +47,7 @@ const CartScreen = (props) => {
     };
 
     const onPressPlus = (item) => {
-        console.log(item)
-        console.log(order)
+
         changeThat(item.id, 1);
     };
 
@@ -47,7 +57,8 @@ const CartScreen = (props) => {
                 order[i].quantity += value;
                 setOrder(order);
                 setTotal((100*total + 100*value*order[i].price)/100);
-                setTotalTotal((100*total + 100*deliveryFee)/100);
+                setTotalQuantity(totalQuantity + value)
+                // setTotalTotal((100*total + 100*deliveryFee)/100);
                 return ;
             }
         }
@@ -59,7 +70,9 @@ const CartScreen = (props) => {
     }
 
     const orderSubmitted = () => {
-        navigation.navigate("OrderedAnimationScreen");
+        if (total != 0) {
+            navigation.navigate("OrderedAnimationScreen");
+        }
     }
 
     return (
@@ -92,19 +105,23 @@ const CartScreen = (props) => {
 
             </View>
 
-            <View style={styles.turtlePart}>
-                <Image source={require('../Resources/zoomedContainers.jpg')} style={styles.turtleImage}/>
-                <View style={styles.turtleText}>
-                    <Text style={{fontWeight: 'bold', fontSize: 20}}>You will save one turtle <Icon name="bulb1" size={25} color={ColourPalette.purple}/></Text>
-                    <Text style={{fontSize: 15}}>lorem ipsum lorem ipsum</Text>
+            <View style={{flexDirection: 'row', backgroundColor: ColourPalette.lightPurple, padding: 10, borderRadius: 16, margin: 10}}>
+                <Image source={require('../Resources/zoomedContainers.jpg')} style={{height: 70, width: 70, marginRight: 10}}/>
+                <View style ={{ justifyContent: 'center', width:'75%' }}>
+                    <Text style = {{fontWeight: 'bold', fontSize: 20}}>Look at you go!</Text>
+                    <Text style={{fontSize: 15}}>This purchase prevents the waste of <Text style={{fontWeight: 'bold'}}>{totalQuantity}</Text> single-use plastic {totalQuantity == 1 ? "container" : "containers"}</Text>
                 </View>
+                <Icon name="bulb1" size={25} color={ColourPalette.purple} style={{position: 'absolute', right:10, top: 10}}/>
             </View>
 
-            <View style={styles.orderButton}>
                 <TouchableWithoutFeedback style={styles.orderButton} onPress={orderSubmitted}>
-                    <Text style={styles.buttonText}>Order (£{total})</Text>
+                    <View style={styles.orderButton}>
+
+                        <Text style={styles.buttonText}>{total === 0 ? "Your cart is empty." : "Order (£"+total+")" }</Text>
+
+                    </View>
+
                 </TouchableWithoutFeedback>
-            </View>
         </SafeAreaView>
 
     );
@@ -153,27 +170,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         padding: 2,
-    },
-    turtlePart: {
-        height: height*0.15,
-        width:'100%',
-        backgroundColor: ColourPalette.lightPurple,
-        // alignItems: 'center',
-        justifyContent: 'flex-start',
-        borderRadius:15,
-        paddingHorizontal: height*0.03,
-        paddingVertical: height*0.025,
-
-        flexDirection: 'row',
-
-
-    },
-    turtleImage: {
-        width: height*0.1,
-        height: height*0.1,
-    },
-    turtleText: {
-        paddingLeft: 10,
     },
 
     orderButton: {

@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, TouchableOpacity, View, Image, ImageBackground, Text, ScrollView} from 'react-native';
+import {SafeAreaView, StyleSheet, TouchableOpacity, View, Image, ImageBackground, Text,ScrollView} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import ColourPalette from "../ColourPalette";
 import Icon from "react-native-vector-icons/Octicons";
