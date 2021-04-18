@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "greenDelivery",
-    "slug": "greenDelivery",
+    "name": "Green Delivery",
+    "slug": "GreenDelivery",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./Images/appIcon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
