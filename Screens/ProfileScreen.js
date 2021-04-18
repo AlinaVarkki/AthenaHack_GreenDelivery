@@ -90,10 +90,10 @@ const ProfileScreen = () => {
                 </View>
             </View>
 
-            <Image style = {{height: 26, width:126, alignSelf: "flex-end", marginBottom: 5, marginRight: 5}} source={require('../Images/social.png')}/>
+            <Image style = {{height: 40, width:176, alignSelf: "flex-end", marginBottom: 5, marginRight: 5, marginTop:10}} source={require('../Images/social.png')}/>
         </SafeAreaView>
-        </ScrollView>
 
+        </ScrollView>
     );
 }
 

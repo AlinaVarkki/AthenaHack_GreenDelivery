@@ -114,32 +114,38 @@ const ImpactScreen = () => {
 
             <Image style = {{height: 36, width:156, alignSelf: "flex-start", marginBottom: 10, marginLeft: 5}} source={require('../Images/social.png')}/>
 
-            <View style={{flexDirection: 'row', backgroundColor: "#f0f1fa", padding: 10, borderRadius: 16, margin: 10}} onPress={() => Linking.openURL('http://google.com')} >
-                <Image source={require('../Resources/zoomedContainers.jpg')} style={{height: 70, width: 70, marginRight: 10}}/>
-                <View style ={{ justifyContent: 'center' }}>
-                    <Text  style = {{fontWeight: 'bold', fontSize: 17}}>15 purchases total</Text>
-                    <Text>lorem ipsum lorem ipsum</Text>
+            <TouchableOpacity onPress={() => Linking.openURL('https://www.wm.com/us/en/recycle-right/recycling-101')}>
+                <View style={{flexDirection: 'row', backgroundColor: "#f0f1fa", padding: 10, borderRadius: 16, margin: 10}}  >
+                    <Image source={require('../Resources/zoomedContainers.jpg')} style={{height: 70, width: 70, marginRight: 10}}/>
+                    <View style ={{ justifyContent: 'center' }}>
+                        <Text   style = {{fontWeight: 'bold', fontSize: 17}}>Guide to recycling</Text>
+                        <Text>Click to learn about correct ways to recycle</Text>
+                    </View>
+                    <Icon2 name="bulb1" size={25} color={ColourPalette.purple} style={{marginLeft: 100}}/>
                 </View>
-                <Icon2 name="bulb1" size={25} color={ColourPalette.purple} style={{marginLeft: 100}}/>
-            </View>
+            </TouchableOpacity>
 
-            <View style={{flexDirection: 'row', backgroundColor: "#f0f1fa", padding: 10, borderRadius: 16, margin: 10}}>
-                <Image source={require('../Resources/zoomedContainers.jpg')} style={{height: 70, width: 70, marginRight: 10}}/>
-                <View style ={{ justifyContent: 'center' }}>
-                    <Text style = {{fontWeight: 'bold', fontSize: 17}}>15 purchases total</Text>
-                    <Text>lorem ipsum lorem ipsum</Text>
+            <TouchableOpacity onPress={() => Linking.openURL('https://www.thefabuloustimes.com/green-ways-to-travel-around-london/')}>
+                <View style={{flexDirection: 'row', backgroundColor: "#f0f1fa", padding: 10, borderRadius: 16, margin: 10}}  >
+                    <Image source={require('../Resources/zoomedContainers.jpg')} style={{height: 70, width: 70, marginRight: 10}}/>
+                    <View style ={{ justifyContent: 'center' }}>
+                        <Text   style = {{fontWeight: 'bold', fontSize: 17}}>Green travelling</Text>
+                        <Text>Click to see green ways get around London</Text>
+                    </View>
+                    <Icon2 name="bulb1" size={25} color={ColourPalette.purple} style={{marginLeft: 100}}/>
                 </View>
-                <Icon2 name="bulb1" size={25} color={ColourPalette.purple} style={{marginLeft: 100}}/>
-            </View>
+            </TouchableOpacity>
 
-            <View style={{flexDirection: 'row', backgroundColor: "#f0f1fa", padding: 10, borderRadius: 16, margin: 10}}>
-                <Image source={require('../Resources/zoomedContainers.jpg')} style={{height: 70, width: 70, marginRight: 10}}/>
-                <View style ={{ justifyContent: 'center' }}>
-                    <Text style = {{fontWeight: 'bold', fontSize: 17}}>15 purchases total</Text>
-                    <Text>lorem ipsum lorem ipsum</Text>
+            <TouchableOpacity onPress={() => Linking.openURL('https://www.thefabuloustimes.com/green-ways-to-travel-around-london/')}>
+                <View style={{flexDirection: 'row', backgroundColor: "#f0f1fa", padding: 10, borderRadius: 16, margin: 10}}  >
+                    <Image source={require('../Resources/zoomedContainers.jpg')} style={{height: 70, width: 70, marginRight: 10}}/>
+                    <View style ={{ justifyContent: 'center' }}>
+                        <Text   style = {{fontWeight: 'bold', fontSize: 17}}>Green travelling</Text>
+                        <Text>Click to see green ways get around London</Text>
+                    </View>
+                    <Icon2 name="bulb1" size={25} color={ColourPalette.purple} style={{marginLeft: 100}}/>
                 </View>
-                <Icon2 name="bulb1" size={25} color={ColourPalette.purple} style={{marginLeft: 100}}/>
-            </View>
+            </TouchableOpacity>
 
         </SafeAreaView>
         </ScrollView>
