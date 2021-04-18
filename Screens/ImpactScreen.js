@@ -10,6 +10,7 @@ import {ScrollView} from "react-native-gesture-handler";
 const ImpactScreen = () => {
 
 
+
     const navigation = useNavigation()
     const openSideMenu = () => {
         navigation.openDrawer();
@@ -116,7 +117,7 @@ const ImpactScreen = () => {
 
             <TouchableOpacity onPress={() => Linking.openURL('https://www.wm.com/us/en/recycle-right/recycling-101')}>
                 <View style={{flexDirection: 'row', backgroundColor: "#f0f1fa", padding: 10, borderRadius: 16, margin: 10}}  >
-                    <Image source={require('../Resources/zoomedContainers.jpg')} style={{height: 70, width: 70, marginRight: 10}}/>
+                    <Image source={require('../Resources/LinksImages/recycling.png')} style={{height: 70, width: 70, marginRight: 10}}/>
                     <View style ={{ justifyContent: 'center' }}>
                         <Text   style = {{fontWeight: 'bold', fontSize: 17}}>Guide to recycling</Text>
                         <Text>Click to learn about correct ways to recycle</Text>
@@ -127,7 +128,7 @@ const ImpactScreen = () => {
 
             <TouchableOpacity onPress={() => Linking.openURL('https://www.thefabuloustimes.com/green-ways-to-travel-around-london/')}>
                 <View style={{flexDirection: 'row', backgroundColor: "#f0f1fa", padding: 10, borderRadius: 16, margin: 10}}  >
-                    <Image source={require('../Resources/zoomedContainers.jpg')} style={{height: 70, width: 70, marginRight: 10}}/>
+                    <Image source={require('../Resources/LinksImages/travelling.png')} style={{height: 70, width: 70, marginRight: 10}}/>
                     <View style ={{ justifyContent: 'center' }}>
                         <Text   style = {{fontWeight: 'bold', fontSize: 17}}>Green travelling</Text>
                         <Text>Click to see green ways get around London</Text>
@@ -138,7 +139,7 @@ const ImpactScreen = () => {
 
             <TouchableOpacity onPress={() => Linking.openURL('https://www.wessexwater.co.uk/community/blog/14-ways-to-live-a-more-sustainable-lifestyle')}>
                 <View style={{flexDirection: 'row', backgroundColor: "#f0f1fa", padding: 10, borderRadius: 16, margin: 10}}  >
-                    <Image source={require('../Resources/zoomedContainers.jpg')} style={{height: 70, width: 70, marginRight: 10}}/>
+                    <Image source={require('../Resources/LinksImages/sustainable.png')} style={{height: 70, width: 70, marginRight: 10}}/>
                     <View style ={{ justifyContent: 'center' }}>
                         <Text   style = {{fontWeight: 'bold', fontSize: 17}}>Sustainable lifestyle</Text>
                         <Text>Click to see the ways you can contibute</Text>

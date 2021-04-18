@@ -5,6 +5,7 @@ import WelcomeScreen from "./Screens/WelcomeScreen";
 import DrawerNavigation from "./Navigators/DrawerNavigation";
 import CardPaymentScreen from "./Screens/CardPaymentScreen";
 import MenuScreen from "./Screens/MenuScreen";
+import PaymentScreen from "./Screens/PaymentScreen";
 import StackNavigation from "./Navigators/StackNavigation";
 
 export default function App() {

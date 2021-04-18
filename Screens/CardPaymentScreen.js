@@ -1,6 +1,6 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, TouchableOpacity, View} from 'react-native';
-import {CreditCardInput} from "react-native-payment-card";
+import { CreditCardInput, LiteCreditCardInput } from "react-native-credit-card-input";
 import {useNavigation} from '@react-navigation/native';
 import ColourPalette from "../ColourPalette";
 import Icon from "react-native-vector-icons/Octicons";
@@ -23,15 +23,9 @@ const CardPaymentScreen = () => {
             </View>
                 </TouchableOpacity>
 
-            <CreditCardInput
-
-                autoFocus
-                requiresName
-                requiresCVC
-                validColor={"black"}
-                invalidColor={"red"}
-                placeholderColor={"darkgray"}
-            />
+            <View style ={{padding: 30}}>
+            <CreditCardInput  />
+            </View>
         </SafeAreaView>
 
     );
