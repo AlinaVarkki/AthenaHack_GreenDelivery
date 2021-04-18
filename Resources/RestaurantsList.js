@@ -9,7 +9,7 @@ export default class RestList{
             deliveryTime: "20 - 25",
             priceCategory: "£",
             deliveryPrice: 2,
-            image: require('../Resources/food.jpg'),
+            image: require('../Images/CoverPhotos/paesano.png'),
             address: '94 Miller St, Glasgow G1 1DT'
         },
         {
@@ -19,7 +19,7 @@ export default class RestList{
             deliveryTime: "30 - 35",
             priceCategory: "£££",
             deliveryPrice: 3,
-            image: require('../Resources/food.jpg'),
+            image: require('../Images/CoverPhotos/wagamama.png'),
             address: '97 W George St, Glasgow G2 1PB'
 
         },{
@@ -29,7 +29,7 @@ export default class RestList{
             deliveryTime: "10 - 15",
             priceCategory: "£",
             deliveryPrice: 2,
-            image: require('../Resources/food.jpg'),
+            image: require('../Images/CoverPhotos/starbucks.png'),
             address: '9 Exchange Pl, Glasgow G1 3AN'
 
         },{
@@ -39,7 +39,7 @@ export default class RestList{
             deliveryTime: '5 - 10',
             priceCategory: "££",
             deliveryPrice: 3.50,
-            image: require('../Resources/food.jpg'),
+            image: require('../Images/CoverPhotos/picnic.png'),
             address: '103 Ingram St, Glasgow G1 1DX'
 
         },{
@@ -49,7 +49,7 @@ export default class RestList{
             deliveryTime: '15 - 20',
             priceCategory: "£££",
             deliveryPrice: 4,
-            image: require('../Resources/food.jpg'),
+            image: require('../Images/CoverPhotos/indian.png'),
             address: '25 High St, Glasgow G1 1LX'
 
         }, {
@@ -59,7 +59,7 @@ export default class RestList{
             deliveryTime: '25 - 30',
             priceCategory: "££",
             deliveryPrice: 2.5,
-            image: require('../Resources/food.jpg'),
+            image: require('../Images/CoverPhotos/sushi.png'),
             address: '85 W George St, Glasgow G2 1QG'
 
         },
