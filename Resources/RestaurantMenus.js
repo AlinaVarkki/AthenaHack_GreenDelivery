@@ -506,6 +506,249 @@ export default class RestaurantMenus{
         }
     ]
 
+    //stack & still
+    static menu6 = [
+        {title: 'Sweet Signatures',
+        data: [
+            {
+                id: 1,
+                title: 'SUPERFOOD STACK',
+                description: 'Low Fat Stack • Blueberries • Strawberries • Greek Yoghurt • Raspberries • Granola • Honey',
+                price: 10.5,
+                image: null,
+            },
+            {
+                id: 2,
+                title: 'BISCOFF S’MORES STACK',
+                description: 'Buttermilk Stack • Toasted Marshmallows • Biscoff Spread Chantilly Cream • Lotus Biscuit • Chocolate Chips • Chocolate Sauce',
+                price: 10.5,
+                image: null,
+            },
+            {
+                id: 3,
+                title: 'TOFFEE APPLE STACK',
+                description: 'Buttermilk Stack • Apple & Cinnamon • Walnuts Toffee Crisp • Chocolate Sauce • Toffee Sauce',
+                price: 10.5,
+                image: null,
+            },
+            {
+                id: 4,
+                title: 'PEACHES & CREAM STACK',
+                description: 'Buttermilk Stack • Grilled Peaches • Cinnamon Syrup • Raspberries Blueberries • Crème Fraîche • Mint • Flaked Almonds',
+                price: 10.5,
+                image: null,
+            },
+            {
+                id: 5,
+                title: 'BANANA STACK',
+                description: 'Buttermilk Stack • Banana • Chocolate Chip Mascarpone • Salted Caramel Sauce • Chocolate Sauce',
+                price: 10.5,
+                image: null,
+            },
+            {
+                id: 6,
+                title: 'NUTELLA STACK',
+                description: 'ButtermilkStack • Nutella • Mascarpone • Crunchie Chocolate Chip • Caramel Sauce',
+                price: 10.5,
+                image: null,
+            },
+            {
+                id: 7,
+                title: 'STRAWBERRY CHEESECAKE STACK',
+                description: 'Buttermilk Stack • Strawberries • Meringue • Cream Cheese Biscuit Crumb • Toffee Sauce • Chocolate Sauce',
+                price: 10.5,
+                image: null,
+            },
+            {
+                id: 8,
+                title: 'PEANUT BUTTER CUP STACK',
+                description: 'Buttermilk Stack • Reese’s Peanut Butter Cup • Blueberries • Peanut Butter • Chantilly Cream • Chocolate Sauce • Mint',
+                price: 10.5,
+                image: null,
+            },
+        ],},
+        {title: 'Savoury Signatures',
+            data: [
+                {
+                    id: 9,
+                    title: 'BIG BREAKFAST STACK',
+                    description: 'Buttermilk Stack • Bacon • Black Pudding • Lorne Sausage • Maple Baked Beans • Fried Egg • Sautéed Onion',
+                    price: 10.5,
+                    image: null,
+                },
+                {
+                    id: 10,
+                    title: 'SMOKED SALMON & AVOCADO STACK',
+                    description: 'Buttermilk Stack • Scottish Smoked Salmon • Cheese & Chive Omelette • Avocado • Crème Fraîche',
+                    price: 10.5,
+                    image: null,
+                },
+                {
+                    id: 11,
+                    title: 'FALAFEL STACK',
+                    description: 'Buttermilk Stack • Beetroot & Cumin Falafel • Chickpea & Herb Salsa Beetroot • Avocado • Sriracha Sauce • Minted Yoghurt',
+                    price: 10.5,
+                    image: null,
+                },
+                {
+                    id: 12,
+                    title: 'TIKKA STACK',
+                    description: 'Buttermilk Stack • Chicken or Veg Tikka Curry • Mini Papadum • Minted Yoghurt • Pickled Onion • Mango Chutney • Mint',
+                    price: 10.5,
+                    image: null,
+                },
+                {
+                    id: 13,
+                    title: 'PIRI PIRI STACK',
+                    description: 'Buttermilk Stack • Breaded Chicken Tenders • Piri Piri Sauce • Sweet Corn Slaw • Crème Fraîche • Sweet Piquanté Pepper • Coriander',
+                    price: 10.5,
+                    image: null,
+                },
+                {
+                    id: 14,
+                    title: 'DONER KEBAB STACK',
+                    description: 'Buttermilk Stack • Lamb Doner Meat • Hummous • Slaw Pickled Onion • Feta • Minted Yoghurt • Spicy Relish',
+                    price: 10.5,
+                    image: null,
+                },
+                {
+                    id: 15,
+                    title: 'CHIPOTLE PULLED PORK STACK',
+                    description: 'Buttermilk Stack • 10 Hour Chipotle Pulled Pork • Chickpea Salsa • Avocado • Chipotle Mayo • Chipotle Mayo • Coriander',
+                    price: 10.5,
+                    image: null,
+                },
+                {
+                    id: 16,
+                    title: 'ALL AMERICAN STACK',
+                    description: 'Buttermilk Stack • 10 Hour Shredded BBQ Brisket • Cheddar • Mustard • BBQ Sauce • Onion Ring • Dill Pickle',
+                    price: 10.5,
+                    image: null,
+                },
+            ],}
 
 
+    ]
+
+    //bread meats bread
+    static menu7 = [
+        {title: "Specialty Burgers",
+        data: [
+            {
+                id: 1,
+                title: 'Wolf Of St Vincent st Burger',
+                description: 'Six ounce patty. With American cheese, bacon, spicy nduja, and pulled pork in tangy BBQ sauce with crispy fried onions and sriracha mayonnaise.',
+                price: 12,
+                image: require('../Images/Menus/menu7/menu7-id1.png'),
+            },
+            {
+                id: 2,
+                title: 'Full House Burger',
+                description: 'Six ounce patty. Topped with scamorza (smoky mozzarella) and pulled beef brisket in smoky BBQ sauce, crispy fried onions, pickle, and spicy beefy mayonnaise.',
+                price: 11.5,
+                image: require('../Images/Menus/menu7/menu7-id2.png'),
+            },
+            {
+                id: 3,
+                title: 'BBQ BACON & HALLOUMI BURGER',
+                description: 'Six ounce patty. Topped with American Cheese, crispy bacon, sticky BBQ sauce and grilled halloumi with slow onions and drizzled with garlic mayo',
+                price: 11,
+                image: require('../Images/Menus/menu7/menu7-id3.png'),
+            },
+            {
+                id: 4,
+                title: 'Pastrami Burger',
+                description: 'Six ounce patty. Swiss cheese, smoked hand-cut pastrami, purple slaw, and tangy BBQ sauce.',
+                price: 11,
+                image: require('../Images/Menus/menu7/menu7-id4.png'),
+            },
+            {
+                id: 5,
+                title: 'Caribbean Burger',
+                description: 'Six ounce patty. Stuffed with caramelized sweet potatoes, maple bacon, spicy ‘nduja sausage, crispy fried onions, and harissa mayonnaise.',
+                price: 9.5,
+                image: null,
+            },
+
+        ]},
+        {title: "Classic Burgers",
+            data: [
+                {
+                    id: 6,
+                    title: 'Black and Blue Burger',
+                    description: 'Six ounce patty. With blue cheese, crispy bacon, grilled mushrooms, slow onions and blue cheese mayonnaise.',
+                    price: 9.5,
+                    image: require('../Images/Menus/menu7/menu7-id6.png'),
+                },
+                {
+                    id: 7,
+                    title: 'Bacon Cheeseburger',
+                    description: 'Six ounce patty. Crispy bacon, American cheese, slow onions, pickles, and burger sauce.',
+                    price: 9.5,
+                    image: null,
+                },
+                {
+                    id: 8,
+                    title: 'Cheeseburger',
+                    description: 'Six ounce patty. American cheese, slow onions, pickles, and burger sauce.',
+                    price: 9,
+                    image: null,
+                },
+                {
+                    id: 9,
+                    title: 'Classic Burger',
+                    description: 'Six ounce patty. With lettuce, tomato, red onions, pickles, and burger sauce.',
+                    price: 8.50,
+                    image: null,
+                },
+
+            ]},
+        {title: "Vegan Burgers",
+            data: [
+                {
+                    id: 10,
+                    title: 'Classic Vegan Burger',
+                    description: 'Grilled Moving Mountains® plant based burger with lettuce, tomato, red onions, pickles and vegan burger sauce',
+                    price: 8.5,
+                    image: null,
+                },
+                {
+                    id: 11,
+                    title: 'Vegan Cheeseburger',
+                    description: 'Grilled Moving Mountains® plant based burger with vegan cheese, slow onions, pickles and vegan burger sauce',
+                    price: 9,
+                    image: require('../Images/Menus/menu7/menu7-id11.png'),
+                },
+                {
+                    id: 12,
+                    title: 'Vegan Bacon Cheeseburger',
+                    description: 'Grilled Moving Mountains® plant based burger withThis Isn\'t bacon, vegan cheese, slow onions, pickles and vegan burger sauce',
+                    price: 9.5,
+                    image: null,
+                },
+                {
+                    id: 13,
+                    title: 'Vegan Caribbean Burger',
+                    description: 'Grilled Moving Mountains® plant based burger stuffed inside a vegan sesame bun with caramelised sweet potatoes, maple This Isn\'t bacon, crispy fried onions & spicy vegan mayo',
+                    price: 9.5,
+                    image: require('../Images/Menus/menu7/menu7-id13.png'),
+                },
+                {
+                    id: 14,
+                    title: 'Cheeky Vegan Burger',
+                    description: 'Grilled Moving Mountains® plant based burger with vegan cheese, tater tots, famous Peri Peri sauce, pickles, lettuce & spicy vegan mayo',
+                    price: 10,
+                    image:require('../Images/Menus/menu7/menu7-id14.png'),
+                },
+                {
+                    id: 15,
+                    title: 'VEGAN BBQ, BACON & MOZZA\' BURGER',
+                    description: 'Grilled Moving Mountains Plant Based Burger with crispy “This Isn’t” bacon, vegan cheese, sticky BBQ sauce, grilled vegan mozzarella, slow onions and spicy mayo',
+                    price: 11,
+                    image: null,
+                },
+
+            ]},
+
+    ]
 }

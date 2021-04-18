@@ -63,6 +63,27 @@ export default class RestList{
             address: '85 W George St, Glasgow G2 1QG'
 
         },
+        {
+            restaurant_id: 6,
+            title: 'Stack & Still',        //general
+            category: 'Pancakes • Brunch',
+            deliveryTime: '30 - 35',
+            priceCategory: "£££",
+            deliveryPrice: 3,
+            image: require('../Resources/food.jpg'),
+            address: '100 West George St, Glasgow, G2 1PJ'
+
+        },
+        {
+            restaurant_id: 7,
+            title: 'Bread Meats Bread',        //general
+            category: 'Burgers • Vegan options',
+            deliveryTime: '40 - 45',
+            priceCategory: "££",
+            deliveryPrice: 1.5,
+            image: require('../Resources/food.jpg'),
+            address: '65 St Vincent St, Glasgow G2 5'
+        },
     ]
 
 }
