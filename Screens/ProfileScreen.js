@@ -66,6 +66,24 @@ const ProfileScreen = () => {
                 </View>
             </View>
 
+            <View style = {{flexDirection: 'row'}}>
+                <View style = {{margin: 15, alignItems: "center"}}>
+                    <Text style = {{fontSize: 12, color: ColourPalette.purple}}>Plastic savour</Text>
+                    <Image style = {{width: 60, height:60, marginTop: 10}} source={{uri: 'https://media.giphy.com/media/YSy0VKlpfBTuzHqCmm/giphy.gif'}}/>
+                </View>
+
+                <View style = {{margin: 15, alignItems: "center"}}>
+                    <Text style = {{fontSize: 12, color: ColourPalette.purple}}>Plastic savour</Text>
+                    <Image style = {{width: 60, height:60, marginTop: 10}} source={{uri: 'https://media.giphy.com/media/uzGim6eK3DJF5knYWl/giphy.gif'}}/>
+                </View>
+
+                <View style = {{margin: 15, alignItems: "center"}}>
+                    <Text style = {{fontSize: 12, color: ColourPalette.purple}}>Plastic savour</Text>
+                    <Image style = {{width: 60, height:60, marginTop: 10}} source={{uri: 'https://media.giphy.com/media/q9YPRe3JsTnmj3Jo1u/giphy.gif'}}/>
+                </View>
+            </View>
+
+            <Image style = {{height: 26, width:126, alignSelf: "flex-end", marginBottom: 5, marginRight: 5}} source={require('../Images/social.png')}/>
         </SafeAreaView>
 
     );
