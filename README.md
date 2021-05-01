@@ -7,7 +7,7 @@ The app is developed in react native <img src="https://raw.githubusercontent.com
 </p>
 
 <h2>Submission and pitch</h2>
-<p>Our Devpost hackathon submission and pitch can be found <a href="https://play.google.com/store/apps/details?id=com.AlicityDev.MathCube&fbclid=IwAR2cMhKaSWpnTwBIPiR8nIWYynxLJI8Uh5DspD3AdM3DNo4g4VKxrybjfZs">HERE</a><br>
+<p>Our Devpost hackathon submission and pitch can be found <a href="https://devpost.com/software/green-delivery">HERE</a><br>
  
 </p>
 
