@@ -13,5 +13,7 @@ The app is developed in react native <img src="https://raw.githubusercontent.com
 
 <h2>Visuals</h2>
 <p>
-<img src=""/ width="31%">
+<img src="gif1.gif"/ width="31%">
+<img src="gif2.gif"/ width="31%">
+<img src="gif3.gif"/ width="31%">
 </p>
