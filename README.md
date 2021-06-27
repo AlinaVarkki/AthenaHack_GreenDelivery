@@ -8,7 +8,7 @@ The app is developed in react native <img src="https://raw.githubusercontent.com
 </p>
 
 <h2>Submission and pitch</h2>
-<p>Our Devpost hackathon submission and pitch can be found <a href="">HERE</a><br>
+<p>Our hackathon submission and pitch can be found <a href="">HERE</a><br>
  
 </p>
 
