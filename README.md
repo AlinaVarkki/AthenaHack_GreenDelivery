@@ -16,10 +16,48 @@ This project was developed in 63 hours as a submission for Microsoft Challenge d
 </ul>  
 </p>
 
-<h2>Submission and pitch</h2>
-<p>Our hackathon submission and pitch can be found <a href="">HERE</a><br>
- 
-</p>
+<h2>Tackled :question:problems:question: and our :sparkles:solution:sparkles: </h2>
+Our app tackles the following problems:
+<ul>
+
+<li>
+ Individuals losing motivation
+to keep up or develop
+sustainable habits over time
+ </li>
+<li>
+ Individuals who don't know
+where to start their sustainable
+journey
+ </li>
+<li>
+ Individuals who struggle to
+feel part of a community in
+the work place
+ </li>
+</ul>
+
+<br>
+Green Teams solves the problems above by:
+<ul>
+
+<li>
+Achieving sustainability
+through team-centred
+challenges
+ </li>
+<li>
+Keeping motivation and
+engagement through shared
+responsibility and experiences
+ </li>
+<li>
+Creating value and building
+communities that expand
+beyond work engagements
+ </li>
+</ul>
+
 
 <h2>Visuals</h2>
 <p>
